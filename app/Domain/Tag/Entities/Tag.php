@@ -2,9 +2,9 @@
 
 namespace App\Domain\Tag\Entities;
 
-use Illuminate\Database\Eloquent\Model;
+use App\Domain\Core\Entity;
 
-class Tag extends Model
+class Tag extends Entity
 {
     //
 }

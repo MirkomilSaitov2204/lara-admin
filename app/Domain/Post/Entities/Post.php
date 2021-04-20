@@ -2,9 +2,14 @@
 
 namespace App\Domain\Post\Entities;
 
-use Illuminate\Database\Eloquent\Model;
+use App\Domain\Core\Entity;
 
-class Post extends Model
+/**
+ * Class Post
+ * @package App\Domain\Post\Entities
+ * @author Mirkomil Saitov <mirkomilsaitov@gmail.com>
+ */
+class Post extends Entity
 {
     //
 }
