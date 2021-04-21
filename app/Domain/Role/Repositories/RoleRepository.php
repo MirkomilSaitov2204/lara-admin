@@ -4,7 +4,6 @@
 namespace App\Domain\Role\Repositories;
 
 
-use App\Domain\Role\Entities\Role;
 use App\Domain\Role\Interfaces\RoleInterface;
 use App\Domain\Role\Services\RoleService;
 
@@ -13,7 +12,6 @@ use App\Domain\Role\Services\RoleService;
  * @package App\Domain\Role\Repositories
  * @implements RoleInterface
  * @service RoleService
- * @model Role
  *
  * @author Mirkomil Saitov <mirkomilsaitov@mgial.com>
  *
@@ -26,10 +24,6 @@ class RoleRepository implements RoleInterface
      */
     protected $roleServices;
 
-    /**
-     * @var Role
-     */
-    protected $roles;
 
     /**
      * @const PER_PAGE
@@ -39,11 +33,9 @@ class RoleRepository implements RoleInterface
     /**
      * RoleRepository constructor.
      * @param RoleService $roleServices
-     * @param Role $roles
      */
-    public function __construct(RoleService $roleServices, Role $roles)
+    public function __construct(RoleService $roleServices)
     {
-        $this->roles = $roles;
         $this->roleServices = $roleServices;
     }
 
@@ -54,7 +46,7 @@ class RoleRepository implements RoleInterface
     public function getAllRoles($data)
     {
         try {
-            $roles = $this->roles;
+            $roles = $this->roleServices->roles();
             if(!empty($data)){
                 $roles = $this->roleServices->filter($data, $roles);
             }

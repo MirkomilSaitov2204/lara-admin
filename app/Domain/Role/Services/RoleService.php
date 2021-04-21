@@ -28,6 +28,14 @@ class RoleService
     }
 
     /**
+     * @return Role
+     */
+    public function roles(): Role
+    {
+        return $this->roles;
+    }
+
+    /**
      * @param array $data
      * @param $roles
      * @return mixed
