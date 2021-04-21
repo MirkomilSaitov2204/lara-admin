@@ -3,6 +3,7 @@
 namespace App\Domain\User\Employee\Entities;
 
 use App\Domain\Core\Entity;
+use Illuminate\Notifications\Notifiable;
 
 class User extends Entity
 {
