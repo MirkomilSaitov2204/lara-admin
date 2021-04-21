@@ -4,6 +4,7 @@
 namespace App\Domain\Role\Repositories;
 
 
+use App\Domain\Core\GlobalFunctionInterface;
 use App\Domain\Role\Interfaces\RoleInterface;
 use App\Domain\Role\Services\RoleService;
 
@@ -16,7 +17,7 @@ use App\Domain\Role\Services\RoleService;
  * @author Mirkomil Saitov <mirkomilsaitov@mgial.com>
  *
  */
-class RoleRepository implements RoleInterface
+class RoleRepository implements RoleInterface, GlobalFunctionInterface
 {
 
     /**
@@ -28,7 +29,6 @@ class RoleRepository implements RoleInterface
     /**
      * @const PER_PAGE
      */
-    const PER_PAGE = 20;
 
     /**
      * RoleRepository constructor.
@@ -45,6 +45,7 @@ class RoleRepository implements RoleInterface
      */
     public function getAllRoles($data)
     {
+
         try {
             $roles = $this->roleServices->roles();
             if(!empty($data)){
@@ -73,4 +74,5 @@ class RoleRepository implements RoleInterface
     {
         // TODO: Implement deleteRole() method.
     }
+
 }
