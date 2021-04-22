@@ -25,7 +25,7 @@ class CreatePermissionTables extends Migration
             $table->string('name');       // For MySQL 8.0 use string('name', 125);
             $table->string('guard_name'); // For MySQL 8.0 use string('guard_name', 125);
             $table->json('description');
-            $table->bigInteger('parenet_id')->default(0);
+            $table->bigInteger('parent_id')->default(0);
             $table->timestamps();
 
             $table->unique(['name']);

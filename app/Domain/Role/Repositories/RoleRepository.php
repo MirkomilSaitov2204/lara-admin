@@ -12,6 +12,7 @@ use App\Domain\Role\Services\RoleService;
  * Class RoleRepository
  * @package App\Domain\Role\Repositories
  * @implements RoleInterface
+ * @implements GlobalFunctionInterFace
  * @service RoleService
  *
  * @author Mirkomil Saitov <mirkomilsaitov@mgial.com>

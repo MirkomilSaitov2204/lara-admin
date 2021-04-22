@@ -1,566 +1,602 @@
 @extends('backend.layouts.app')
 
 @section('content')
-    <div class="all-content-wrapper">
+    <div class="container-fluid">
+        <!-- Page title -->
+        <div class="page-header d-print-none">
+            <div class="row align-items-center">
+                <div class="col">
+                    <!-- Page pre-title -->
+                    <div class="page-pretitle">
+                        Overview
+                    </div>
+                    <h2 class="page-title">
+                        Condensed layout
+                    </h2>
+                </div>
+                <!-- Page title actions -->
+                <div class="col-auto ms-auto d-print-none">
+                    <div class="btn-list">
+                  <span class="d-none d-sm-inline">
+                    <a href="#" class="btn btn-white">
+                      New view
+                    </a>
+                  </span>
+                        <a href="#" class="btn btn-primary d-none d-sm-inline-block" data-bs-toggle="modal" data-bs-target="#modal-report">
+                            <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>
+                            Create new report
+                        </a>
+                        <a href="#" class="btn btn-primary d-sm-none btn-icon" data-bs-toggle="modal" data-bs-target="#modal-report" aria-label="Create new report">
+                            <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-body">
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="logo-pro">
-                        <a href="index.html"><img class="main-logo" src="img/logo/logo.png" alt="" /></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="header-advance-area">
-            <div class="header-top-area">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <div class="header-top-wraper">
-                                <div class="row">
-                                    <div class="col-lg-1 col-md-0 col-sm-1 col-xs-12">
-                                        <div class="menu-switcher-pro">
-                                            <button type="button" id="sidebarCollapse" class="btn bar-button-pro header-drl-controller-btn btn-info navbar-btn">
-                                                <i class="fa fa-bars"></i>
-                                            </button>
+            <div class="row row-deck row-cards">
+                <div class="col-sm-6 col-lg-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div class="subheader">Sales</div>
+                                <div class="ms-auto lh-1">
+                                    <div class="dropdown">
+                                        <a class="dropdown-toggle text-muted" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Last 7 days</a>
+                                        <div class="dropdown-menu dropdown-menu-end">
+                                            <a class="dropdown-item active" href="#">Last 7 days</a>
+                                            <a class="dropdown-item" href="#">Last 30 days</a>
+                                            <a class="dropdown-item" href="#">Last 3 months</a>
                                         </div>
                                     </div>
-                                    <div class="col-lg-6 col-md-7 col-sm-6 col-xs-12">
-
-                                        <div class="header-top-menu tabl-d-n">
-                                            <div class="breadcome-heading" style="margin-top: 12px">
-                                                <form role="search" class="">
-                                                    <input type="text" placeholder="Search..." class="form-control">
-                                                    <a href=""><i class="fa fa-search" style="margin-top: 20px;"></i></a>
-                                                </form>
+                                </div>
+                            </div>
+                            <div class="h1 mb-3">75%</div>
+                            <div class="d-flex mb-2">
+                                <div>Conversion rate</div>
+                                <div class="ms-auto">
+                        <span class="text-green d-inline-flex align-items-center lh-1">
+                          7% <!-- Download SVG icon from http://tabler-icons.io/i/trending-up -->
+                          <svg xmlns="http://www.w3.org/2000/svg" class="icon ms-1" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="3 17 9 11 13 15 21 7" /><polyline points="14 7 21 7 21 14" /></svg>
+                        </span>
+                                </div>
+                            </div>
+                            <div class="progress progress-sm">
+                                <div class="progress-bar bg-blue" style="width: 75%" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                                    <span class="visually-hidden">75% Complete</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div class="subheader">Revenue</div>
+                                <div class="ms-auto lh-1">
+                                    <div class="dropdown">
+                                        <a class="dropdown-toggle text-muted" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Last 7 days</a>
+                                        <div class="dropdown-menu dropdown-menu-end">
+                                            <a class="dropdown-item active" href="#">Last 7 days</a>
+                                            <a class="dropdown-item" href="#">Last 30 days</a>
+                                            <a class="dropdown-item" href="#">Last 3 months</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-baseline">
+                                <div class="h1 mb-0 me-2">$4,300</div>
+                                <div class="me-auto">
+                        <span class="text-green d-inline-flex align-items-center lh-1">
+                          8% <!-- Download SVG icon from http://tabler-icons.io/i/trending-up -->
+                          <svg xmlns="http://www.w3.org/2000/svg" class="icon ms-1" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="3 17 9 11 13 15 21 7" /><polyline points="14 7 21 7 21 14" /></svg>
+                        </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="chart-revenue-bg" class="chart-sm"></div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div class="subheader">New clients</div>
+                                <div class="ms-auto lh-1">
+                                    <div class="dropdown">
+                                        <a class="dropdown-toggle text-muted" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Last 7 days</a>
+                                        <div class="dropdown-menu dropdown-menu-end">
+                                            <a class="dropdown-item active" href="#">Last 7 days</a>
+                                            <a class="dropdown-item" href="#">Last 30 days</a>
+                                            <a class="dropdown-item" href="#">Last 3 months</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-baseline">
+                                <div class="h1 mb-3 me-2">6,782</div>
+                                <div class="me-auto">
+                        <span class="text-yellow d-inline-flex align-items-center lh-1">
+                          0% <!-- Download SVG icon from http://tabler-icons.io/i/minus -->
+                          <svg xmlns="http://www.w3.org/2000/svg" class="icon ms-1" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="5" y1="12" x2="19" y2="12" /></svg>
+                        </span>
+                                </div>
+                            </div>
+                            <div id="chart-new-clients" class="chart-sm"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div class="subheader">Active users</div>
+                                <div class="ms-auto lh-1">
+                                    <div class="dropdown">
+                                        <a class="dropdown-toggle text-muted" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Last 7 days</a>
+                                        <div class="dropdown-menu dropdown-menu-end">
+                                            <a class="dropdown-item active" href="#">Last 7 days</a>
+                                            <a class="dropdown-item" href="#">Last 30 days</a>
+                                            <a class="dropdown-item" href="#">Last 3 months</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-baseline">
+                                <div class="h1 mb-3 me-2">2,986</div>
+                                <div class="me-auto">
+                        <span class="text-green d-inline-flex align-items-center lh-1">
+                          4% <!-- Download SVG icon from http://tabler-icons.io/i/trending-up -->
+                          <svg xmlns="http://www.w3.org/2000/svg" class="icon ms-1" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="3 17 9 11 13 15 21 7" /><polyline points="14 7 21 7 21 14" /></svg>
+                        </span>
+                                </div>
+                            </div>
+                            <div id="chart-active-users" class="chart-sm"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row row-cards">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h3 class="card-title">Traffic summary</h3>
+                                    <div id="chart-mentions" class="chart-lg"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <p class="mb-3">Using Storage <strong>6854.45 MB </strong>of 8 GB</p>
+                                    <div class="progress progress-separated mb-3">
+                                        <div class="progress-bar bg-primary" role="progressbar" style="width: 44%"></div>
+                                        <div class="progress-bar bg-info" role="progressbar" style="width: 19%"></div>
+                                        <div class="progress-bar bg-success" role="progressbar" style="width: 9%"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-auto d-flex align-items-center pe-2">
+                                            <span class="legend me-2 bg-primary"></span>
+                                            <span>Regular</span>
+                                            <span class="d-none d-md-inline d-lg-none d-xxl-inline ms-2 text-muted">915MB</span>
+                                        </div>
+                                        <div class="col-auto d-flex align-items-center px-2">
+                                            <span class="legend me-2 bg-info"></span>
+                                            <span>System</span>
+                                            <span class="d-none d-md-inline d-lg-none d-xxl-inline ms-2 text-muted">415MB</span>
+                                        </div>
+                                        <div class="col-auto d-flex align-items-center px-2">
+                                            <span class="legend me-2 bg-success"></span>
+                                            <span>Shared</span>
+                                            <span class="d-none d-md-inline d-lg-none d-xxl-inline ms-2 text-muted">201MB</span>
+                                        </div>
+                                        <div class="col-auto d-flex align-items-center ps-2">
+                                            <span class="legend me-2"></span>
+                                            <span>Free</span>
+                                            <span class="d-none d-md-inline d-lg-none d-xxl-inline ms-2 text-muted">612MB</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="card">
+                                <div class="card-body p-2 text-center">
+                                    <div class="text-end text-green">
+                          <span class="text-green d-inline-flex align-items-center lh-1">
+                            6% <!-- Download SVG icon from http://tabler-icons.io/i/trending-up -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon ms-1" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="3 17 9 11 13 15 21 7" /><polyline points="14 7 21 7 21 14" /></svg>
+                          </span>
+                                    </div>
+                                    <div class="h1 m-0">43</div>
+                                    <div class="text-muted mb-3">New Tickets</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="card">
+                                <div class="card-body p-2 text-center">
+                                    <div class="text-end text-red">
+                          <span class="text-red d-inline-flex align-items-center lh-1">
+                            -2% <!-- Download SVG icon from http://tabler-icons.io/i/trending-down -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon ms-1" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="3 7 9 13 13 9 21 17" /><polyline points="21 10 21 17 14 17" /></svg>
+                          </span>
+                                    </div>
+                                    <div class="h1 m-0">95</div>
+                                    <div class="text-muted mb-3">Daily Earnings</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="card">
+                                <div class="card-body p-2 text-center">
+                                    <div class="text-end text-green">
+                          <span class="text-green d-inline-flex align-items-center lh-1">
+                            9% <!-- Download SVG icon from http://tabler-icons.io/i/trending-up -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon ms-1" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="3 17 9 11 13 15 21 7" /><polyline points="14 7 21 7 21 14" /></svg>
+                          </span>
+                                    </div>
+                                    <div class="h1 m-0">7</div>
+                                    <div class="text-muted mb-3">New Replies</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-header border-0">
+                            <div class="card-title">Development activity</div>
+                        </div>
+                        <div class="position-relative">
+                            <div class="position-absolute top-0 left-0 px-3 mt-1 w-50">
+                                <div class="row g-2">
+                                    <div class="col-auto">
+                                        <div class="chart-sparkline chart-sparkline-square" id="sparkline-activity"></div>
+                                    </div>
+                                    <div class="col">
+                                        <div>Today's Earning: $4,262.40</div>
+                                        <div class="text-muted"><!-- Download SVG icon from http://tabler-icons.io/i/trending-up -->
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-inline text-green" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="3 17 9 11 13 15 21 7" /><polyline points="14 7 21 7 21 14" /></svg>
+                                            +5% more than yesterday</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="chart-development-activity"></div>
+                        </div>
+                        <div class="card-table table-responsive">
+                            <table class="table table-vcenter">
+                                <thead>
+                                <tr>
+                                    <th>User</th>
+                                    <th>Commit</th>
+                                    <th>Date</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class="w-1">
+                                        <span class="avatar avatar-sm" style="background-image: url({{asset('backend/static/avatars/000m.jpg')}})"></span>
+                                    </td>
+                                    <td class="td-truncate">
+                                        <div class="text-truncate">
+                                            Fix dart Sass compatibility (#29755)
+                                        </div>
+                                    </td>
+                                    <td class="text-nowrap text-muted">28 Nov 2019</td>
+                                </tr>
+                                <tr>
+                                    <td class="w-1">
+                                        <span class="avatar avatar-sm">JL</span>
+                                    </td>
+                                    <td class="td-truncate">
+                                        <div class="text-truncate">
+                                            Change deprecated html tags to text decoration classes (#29604)
+                                        </div>
+                                    </td>
+                                    <td class="text-nowrap text-muted">27 Nov 2019</td>
+                                </tr>
+                                <tr>
+                                    <td class="w-1">
+                                        <span class="avatar avatar-sm" style="background-image: url(./static/avatars/002m.jpg)"></span>
+                                    </td>
+                                    <td class="td-truncate">
+                                        <div class="text-truncate">
+                                            justify-content:between ⇒ justify-content:space-between (#29734)
+                                        </div>
+                                    </td>
+                                    <td class="text-nowrap text-muted">26 Nov 2019</td>
+                                </tr>
+                                <tr>
+                                    <td class="w-1">
+                                        <span class="avatar avatar-sm" style="background-image: url(./static/avatars/003m.jpg)"></span>
+                                    </td>
+                                    <td class="td-truncate">
+                                        <div class="text-truncate">
+                                            Update change-version.js (#29736)
+                                        </div>
+                                    </td>
+                                    <td class="text-nowrap text-muted">26 Nov 2019</td>
+                                </tr>
+                                <tr>
+                                    <td class="w-1">
+                                        <span class="avatar avatar-sm" style="background-image: url(./static/avatars/000f.jpg)"></span>
+                                    </td>
+                                    <td class="td-truncate">
+                                        <div class="text-truncate">
+                                            Regenerate package-lock.json (#29730)
+                                        </div>
+                                    </td>
+                                    <td class="text-nowrap text-muted">25 Nov 2019</td>
+                                </tr>
+                                <tr>
+                                    <td class="w-1">
+                                        <span class="avatar avatar-sm" style="background-image: url(./static/avatars/001f.jpg)"></span>
+                                    </td>
+                                    <td class="td-truncate">
+                                        <div class="text-truncate">
+                                            Some minor text tweaks
+                                        </div>
+                                    </td>
+                                    <td class="text-nowrap text-muted">24 Nov 2019</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="card" style="height: calc(24rem + 10px)">
+                        <div class="card-body card-body-scrollable card-body-scrollable-shadow">
+                            <div class="divide-y">
+                                <div>
+                                    <div class="row">
+                                        <div class="col-auto">
+                                            <span class="avatar">JL</span>
+                                        </div>
+                                        <div class="col">
+                                            <div class="text-truncate">
+                                                <strong>Jeffie Lewzey</strong> commented on your <strong>"I'm not a witch."</strong> post.
                                             </div>
+                                            <div class="text-muted">yesterday</div>
+                                        </div>
+                                        <div class="col-auto align-self-center">
+                                            <div class="badge bg-primary"></div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
-                                        <div class="header-right-info">
-                                            <ul class="nav navbar-nav mai-top-nav header-right-menu">
-                                                <li class="nav-item dropdown">
-                                                    <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa fa-envelope-o adminpro-chat-pro" aria-hidden="true"></i><span class="indicator-ms"></span></a>
-                                                    <div role="menu" class="author-message-top dropdown-menu animated zoomIn">
-                                                        <div class="message-single-top">
-                                                            <h1>Message</h1>
-                                                        </div>
-                                                        <ul class="message-menu">
-                                                            <li>
-                                                                <a href="#">
-                                                                    <div class="message-img">
-                                                                        <img src="img/contact/1.jpg" alt="">
-                                                                    </div>
-                                                                    <div class="message-content">
-                                                                        <span class="message-date">16 Sept</span>
-                                                                        <h2>Advanda Cro</h2>
-                                                                        <p>Please done this project as soon possible.</p>
-                                                                    </div>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">
-                                                                    <div class="message-img">
-                                                                        <img src="img/contact/4.jpg" alt="">
-                                                                    </div>
-                                                                    <div class="message-content">
-                                                                        <span class="message-date">16 Sept</span>
-                                                                        <h2>Sulaiman din</h2>
-                                                                        <p>Please done this project as soon possible.</p>
-                                                                    </div>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">
-                                                                    <div class="message-img">
-                                                                        <img src="img/contact/3.jpg" alt="">
-                                                                    </div>
-                                                                    <div class="message-content">
-                                                                        <span class="message-date">16 Sept</span>
-                                                                        <h2>Victor Jara</h2>
-                                                                        <p>Please done this project as soon possible.</p>
-                                                                    </div>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">
-                                                                    <div class="message-img">
-                                                                        <img src="img/contact/2.jpg" alt="">
-                                                                    </div>
-                                                                    <div class="message-content">
-                                                                        <span class="message-date">16 Sept</span>
-                                                                        <h2>Victor Jara</h2>
-                                                                        <p>Please done this project as soon possible.</p>
-                                                                    </div>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                        <div class="message-view">
-                                                            <a href="#">View All Messages</a>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa fa-bell-o" aria-hidden="true"></i><span class="indicator-nt"></span></a>
-                                                    <div role="menu" class="notification-author dropdown-menu animated zoomIn">
-                                                        <div class="notification-single-top">
-                                                            <h1>Notifications</h1>
-                                                        </div>
-                                                        <ul class="notification-menu">
-                                                            <li>
-                                                                <a href="#">
-                                                                    <div class="notification-icon">
-                                                                        <i class="fa fa-check adminpro-checked-pro admin-check-pro" aria-hidden="true"></i>
-                                                                    </div>
-                                                                    <div class="notification-content">
-                                                                        <span class="notification-date">16 Sept</span>
-                                                                        <h2>Advanda Cro</h2>
-                                                                        <p>Please done this project as soon possible.</p>
-                                                                    </div>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">
-                                                                    <div class="notification-icon">
-                                                                        <i class="fa fa-cloud adminpro-cloud-computing-down" aria-hidden="true"></i>
-                                                                    </div>
-                                                                    <div class="notification-content">
-                                                                        <span class="notification-date">16 Sept</span>
-                                                                        <h2>Sulaiman din</h2>
-                                                                        <p>Please done this project as soon possible.</p>
-                                                                    </div>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">
-                                                                    <div class="notification-icon">
-                                                                        <i class="fa fa-eraser adminpro-shield" aria-hidden="true"></i>
-                                                                    </div>
-                                                                    <div class="notification-content">
-                                                                        <span class="notification-date">16 Sept</span>
-                                                                        <h2>Victor Jara</h2>
-                                                                        <p>Please done this project as soon possible.</p>
-                                                                    </div>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">
-                                                                    <div class="notification-icon">
-                                                                        <i class="fa fa-line-chart adminpro-analytics-arrow" aria-hidden="true"></i>
-                                                                    </div>
-                                                                    <div class="notification-content">
-                                                                        <span class="notification-date">16 Sept</span>
-                                                                        <h2>Victor Jara</h2>
-                                                                        <p>Please done this project as soon possible.</p>
-                                                                    </div>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                        <div class="notification-view">
-                                                            <a href="#">View All Notification</a>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
-                                                        <i class="fa fa-user adminpro-user-rounded header-riht-inf" aria-hidden="true"></i>
-                                                        <span class="admin-name">Advanda Cro</span>
-                                                        <i class="fa fa-angle-down adminpro-icon adminpro-down-arrow"></i>
-                                                    </a>
-                                                    <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
-                                                        <li><a href="register.html"><span class="fa fa-home author-log-ic"></span>Register</a>
-                                                        </li>
-                                                        <li><a href="#"><span class="fa fa-user author-log-ic"></span>My Profile</a>
-                                                        </li>
-                                                        <li><a href="lock.html"><span class="fa fa-diamond author-log-ic"></span> Lock</a>
-                                                        </li>
-                                                        <li><a href="#"><span class="fa fa-cog author-log-ic"></span>Settings</a>
-                                                        </li>
-                                                        <li><a href="login.html"><span class="fa fa-lock author-log-ic"></span>Log Out</a>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li class="nav-item nav-setting-open"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa fa-tasks"></i></a>
-
-                                                    <div role="menu" class="admintab-wrap menu-setting-wrap menu-setting-wrap-bg dropdown-menu animated zoomIn">
-                                                        <ul class="nav nav-tabs custon-set-tab">
-                                                            <li class="active"><a data-toggle="tab" href="#Notes">News</a>
-                                                            </li>
-                                                            <li><a data-toggle="tab" href="#Projects">Activity</a>
-                                                            </li>
-                                                            <li><a data-toggle="tab" href="#Settings">Settings</a>
-                                                            </li>
-                                                        </ul>
-
-                                                        <div class="tab-content custom-bdr-nt">
-                                                            <div id="Notes" class="tab-pane fade in active">
-                                                                <div class="notes-area-wrap">
-                                                                    <div class="note-heading-indicate">
-                                                                        <h2><i class="fa fa-comments-o"></i> Latest News</h2>
-                                                                        <p>You have 10 New News.</p>
-                                                                    </div>
-                                                                    <div class="notes-list-area notes-menu-scrollbar">
-                                                                        <ul class="notes-menu-list">
-                                                                            <li>
-                                                                                <a href="#">
-                                                                                    <div class="notes-list-flow">
-                                                                                        <div class="notes-img">
-                                                                                            <img src="img/contact/4.jpg" alt="" />
-                                                                                        </div>
-                                                                                        <div class="notes-content">
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
-                                                                                            <span>Yesterday 2:45 pm</span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="#">
-                                                                                    <div class="notes-list-flow">
-                                                                                        <div class="notes-img">
-                                                                                            <img src="img/contact/1.jpg" alt="" />
-                                                                                        </div>
-                                                                                        <div class="notes-content">
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
-                                                                                            <span>Yesterday 2:45 pm</span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="#">
-                                                                                    <div class="notes-list-flow">
-                                                                                        <div class="notes-img">
-                                                                                            <img src="img/contact/2.jpg" alt="" />
-                                                                                        </div>
-                                                                                        <div class="notes-content">
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
-                                                                                            <span>Yesterday 2:45 pm</span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="#">
-                                                                                    <div class="notes-list-flow">
-                                                                                        <div class="notes-img">
-                                                                                            <img src="img/contact/3.jpg" alt="" />
-                                                                                        </div>
-                                                                                        <div class="notes-content">
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
-                                                                                            <span>Yesterday 2:45 pm</span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="#">
-                                                                                    <div class="notes-list-flow">
-                                                                                        <div class="notes-img">
-                                                                                            <img src="img/contact/4.jpg" alt="" />
-                                                                                        </div>
-                                                                                        <div class="notes-content">
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
-                                                                                            <span>Yesterday 2:45 pm</span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="#">
-                                                                                    <div class="notes-list-flow">
-                                                                                        <div class="notes-img">
-                                                                                            <img src="img/contact/1.jpg" alt="" />
-                                                                                        </div>
-                                                                                        <div class="notes-content">
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
-                                                                                            <span>Yesterday 2:45 pm</span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="#">
-                                                                                    <div class="notes-list-flow">
-                                                                                        <div class="notes-img">
-                                                                                            <img src="img/contact/2.jpg" alt="" />
-                                                                                        </div>
-                                                                                        <div class="notes-content">
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
-                                                                                            <span>Yesterday 2:45 pm</span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="#">
-                                                                                    <div class="notes-list-flow">
-                                                                                        <div class="notes-img">
-                                                                                            <img src="img/contact/1.jpg" alt="" />
-                                                                                        </div>
-                                                                                        <div class="notes-content">
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
-                                                                                            <span>Yesterday 2:45 pm</span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="#">
-                                                                                    <div class="notes-list-flow">
-                                                                                        <div class="notes-img">
-                                                                                            <img src="img/contact/2.jpg" alt="" />
-                                                                                        </div>
-                                                                                        <div class="notes-content">
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
-                                                                                            <span>Yesterday 2:45 pm</span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="#">
-                                                                                    <div class="notes-list-flow">
-                                                                                        <div class="notes-img">
-                                                                                            <img src="img/contact/3.jpg" alt="" />
-                                                                                        </div>
-                                                                                        <div class="notes-content">
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
-                                                                                            <span>Yesterday 2:45 pm</span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div id="Projects" class="tab-pane fade">
-                                                                <div class="projects-settings-wrap">
-                                                                    <div class="note-heading-indicate">
-                                                                        <h2><i class="fa fa-cube"></i> Recent Activity</h2>
-                                                                        <p> You have 20 Recent Activity.</p>
-                                                                    </div>
-                                                                    <div class="project-st-list-area project-st-menu-scrollbar">
-                                                                        <ul class="projects-st-menu-list">
-                                                                            <li>
-                                                                                <a href="#">
-                                                                                    <div class="project-list-flow">
-                                                                                        <div class="projects-st-heading">
-                                                                                            <h2>New User Registered</h2>
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
-                                                                                            <span class="project-st-time">1 hours ago</span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="#">
-                                                                                    <div class="project-list-flow">
-                                                                                        <div class="projects-st-heading">
-                                                                                            <h2>New Order Received</h2>
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
-                                                                                            <span class="project-st-time">2 hours ago</span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="#">
-                                                                                    <div class="project-list-flow">
-                                                                                        <div class="projects-st-heading">
-                                                                                            <h2>New Order Received</h2>
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
-                                                                                            <span class="project-st-time">3 hours ago</span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="#">
-                                                                                    <div class="project-list-flow">
-                                                                                        <div class="projects-st-heading">
-                                                                                            <h2>New Order Received</h2>
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
-                                                                                            <span class="project-st-time">4 hours ago</span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="#">
-                                                                                    <div class="project-list-flow">
-                                                                                        <div class="projects-st-heading">
-                                                                                            <h2>New User Registered</h2>
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
-                                                                                            <span class="project-st-time">5 hours ago</span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="#">
-                                                                                    <div class="project-list-flow">
-                                                                                        <div class="projects-st-heading">
-                                                                                            <h2>New Order</h2>
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
-                                                                                            <span class="project-st-time">6 hours ago</span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="#">
-                                                                                    <div class="project-list-flow">
-                                                                                        <div class="projects-st-heading">
-                                                                                            <h2>New User</h2>
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
-                                                                                            <span class="project-st-time">7 hours ago</span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="#">
-                                                                                    <div class="project-list-flow">
-                                                                                        <div class="projects-st-heading">
-                                                                                            <h2>New Order</h2>
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
-                                                                                            <span class="project-st-time">9 hours ago</span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div id="Settings" class="tab-pane fade">
-                                                                <div class="setting-panel-area">
-                                                                    <div class="note-heading-indicate">
-                                                                        <h2><i class="fa fa-gears"></i> Settings Panel</h2>
-                                                                        <p> You have 20 Settings. 5 not completed.</p>
-                                                                    </div>
-                                                                    <ul class="setting-panel-list">
-                                                                        <li>
-                                                                            <div class="checkbox-setting-pro">
-                                                                                <div class="checkbox-title-pro">
-                                                                                    <h2>Show notifications</h2>
-                                                                                    <div class="ts-custom-check">
-                                                                                        <div class="onoffswitch">
-                                                                                            <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example">
-                                                                                            <label class="onoffswitch-label" for="example">
-                                                                                                <span class="onoffswitch-inner"></span>
-                                                                                                <span class="onoffswitch-switch"></span>
-                                                                                            </label>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </li>
-                                                                        <li>
-                                                                            <div class="checkbox-setting-pro">
-                                                                                <div class="checkbox-title-pro">
-                                                                                    <h2>Disable Chat</h2>
-                                                                                    <div class="ts-custom-check">
-                                                                                        <div class="onoffswitch">
-                                                                                            <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example3">
-                                                                                            <label class="onoffswitch-label" for="example3">
-                                                                                                <span class="onoffswitch-inner"></span>
-                                                                                                <span class="onoffswitch-switch"></span>
-                                                                                            </label>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </li>
-                                                                        <li>
-                                                                            <div class="checkbox-setting-pro">
-                                                                                <div class="checkbox-title-pro">
-                                                                                    <h2>Enable history</h2>
-                                                                                    <div class="ts-custom-check">
-                                                                                        <div class="onoffswitch">
-                                                                                            <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example4">
-                                                                                            <label class="onoffswitch-label" for="example4">
-                                                                                                <span class="onoffswitch-inner"></span>
-                                                                                                <span class="onoffswitch-switch"></span>
-                                                                                            </label>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </li>
-                                                                        <li>
-                                                                            <div class="checkbox-setting-pro">
-                                                                                <div class="checkbox-title-pro">
-                                                                                    <h2>Show charts</h2>
-                                                                                    <div class="ts-custom-check">
-                                                                                        <div class="onoffswitch">
-                                                                                            <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example7">
-                                                                                            <label class="onoffswitch-label" for="example7">
-                                                                                                <span class="onoffswitch-inner"></span>
-                                                                                                <span class="onoffswitch-switch"></span>
-                                                                                            </label>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </li>
-                                                                        <li>
-                                                                            <div class="checkbox-setting-pro">
-                                                                                <div class="checkbox-title-pro">
-                                                                                    <h2>Update everyday</h2>
-                                                                                    <div class="ts-custom-check">
-                                                                                        <div class="onoffswitch">
-                                                                                            <input type="checkbox" name="collapsemenu" checked="" class="onoffswitch-checkbox" id="example2">
-                                                                                            <label class="onoffswitch-label" for="example2">
-                                                                                                <span class="onoffswitch-inner"></span>
-                                                                                                <span class="onoffswitch-switch"></span>
-                                                                                            </label>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </li>
-                                                                        <li>
-                                                                            <div class="checkbox-setting-pro">
-                                                                                <div class="checkbox-title-pro">
-                                                                                    <h2>Global search</h2>
-                                                                                    <div class="ts-custom-check">
-                                                                                        <div class="onoffswitch">
-                                                                                            <input type="checkbox" name="collapsemenu" checked="" class="onoffswitch-checkbox" id="example6">
-                                                                                            <label class="onoffswitch-label" for="example6">
-                                                                                                <span class="onoffswitch-inner"></span>
-                                                                                                <span class="onoffswitch-switch"></span>
-                                                                                            </label>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </li>
-                                                                        <li>
-                                                                            <div class="checkbox-setting-pro">
-                                                                                <div class="checkbox-title-pro">
-                                                                                    <h2>Offline users</h2>
-                                                                                    <div class="ts-custom-check">
-                                                                                        <div class="onoffswitch">
-                                                                                            <input type="checkbox" name="collapsemenu" checked="" class="onoffswitch-checkbox" id="example5">
-                                                                                            <label class="onoffswitch-label" for="example5">
-                                                                                                <span class="onoffswitch-inner"></span>
-                                                                                                <span class="onoffswitch-switch"></span>
-                                                                                            </label>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </li>
-                                                                    </ul>
-
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
+                                </div>
+                                <div>
+                                    <div class="row">
+                                        <div class="col-auto">
+                                            <span class="avatar" style="background-image: url(./static/avatars/002m.jpg)"></span>
+                                        </div>
+                                        <div class="col">
+                                            <div class="text-truncate">
+                                                It's <strong>Mallory Hulme</strong>'s birthday. Wish him well!
+                                            </div>
+                                            <div class="text-muted">2 days ago</div>
+                                        </div>
+                                        <div class="col-auto align-self-center">
+                                            <div class="badge bg-primary"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="row">
+                                        <div class="col-auto">
+                                            <span class="avatar" style="background-image: url(./static/avatars/003m.jpg)"></span>
+                                        </div>
+                                        <div class="col">
+                                            <div class="text-truncate">
+                                                <strong>Dunn Slane</strong> posted <strong>"Well, what do you want?"</strong>.
+                                            </div>
+                                            <div class="text-muted">today</div>
+                                        </div>
+                                        <div class="col-auto align-self-center">
+                                            <div class="badge bg-primary"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="row">
+                                        <div class="col-auto">
+                                            <span class="avatar" style="background-image: url(./static/avatars/000f.jpg)"></span>
+                                        </div>
+                                        <div class="col">
+                                            <div class="text-truncate">
+                                                <strong>Emmy Levet</strong> created a new project <strong>Morning alarm clock</strong>.
+                                            </div>
+                                            <div class="text-muted">4 days ago</div>
+                                        </div>
+                                        <div class="col-auto align-self-center">
+                                            <div class="badge bg-primary"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="row">
+                                        <div class="col-auto">
+                                            <span class="avatar" style="background-image: url(./static/avatars/001f.jpg)"></span>
+                                        </div>
+                                        <div class="col">
+                                            <div class="text-truncate">
+                                                <strong>Maryjo Lebarree</strong> liked your photo.
+                                            </div>
+                                            <div class="text-muted">2 days ago</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="row">
+                                        <div class="col-auto">
+                                            <span class="avatar">EP</span>
+                                        </div>
+                                        <div class="col">
+                                            <div class="text-truncate">
+                                                <strong>Egan Poetz</strong> registered new client as <strong>Trilia</strong>.
+                                            </div>
+                                            <div class="text-muted">yesterday</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="row">
+                                        <div class="col-auto">
+                                            <span class="avatar" style="background-image: url(./static/avatars/002f.jpg)"></span>
+                                        </div>
+                                        <div class="col">
+                                            <div class="text-truncate">
+                                                <strong>Kellie Skingley</strong> closed a new deal on project <strong>Pen Pineapple Apple Pen</strong>.
+                                            </div>
+                                            <div class="text-muted">2 days ago</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="row">
+                                        <div class="col-auto">
+                                            <span class="avatar" style="background-image: url(./static/avatars/003f.jpg)"></span>
+                                        </div>
+                                        <div class="col">
+                                            <div class="text-truncate">
+                                                <strong>Christabel Charlwood</strong> created a new project for <strong>Wikibox</strong>.
+                                            </div>
+                                            <div class="text-muted">4 days ago</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="row">
+                                        <div class="col-auto">
+                                            <span class="avatar">HS</span>
+                                        </div>
+                                        <div class="col">
+                                            <div class="text-truncate">
+                                                <strong>Haskel Shelper</strong> change status of <strong>Tabler Icons</strong> from <strong>open</strong> to <strong>closed</strong>.
+                                            </div>
+                                            <div class="text-muted">today</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="row">
+                                        <div class="col-auto">
+                                            <span class="avatar" style="background-image: url(./static/avatars/006m.jpg)"></span>
+                                        </div>
+                                        <div class="col">
+                                            <div class="text-truncate">
+                                                <strong>Lorry Mion</strong> liked <strong>Tabler UI Kit</strong>.
+                                            </div>
+                                            <div class="text-muted">yesterday</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="row">
+                                        <div class="col-auto">
+                                            <span class="avatar" style="background-image: url(./static/avatars/004f.jpg)"></span>
+                                        </div>
+                                        <div class="col">
+                                            <div class="text-truncate">
+                                                <strong>Leesa Beaty</strong> posted new video.
+                                            </div>
+                                            <div class="text-muted">2 days ago</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="row">
+                                        <div class="col-auto">
+                                            <span class="avatar" style="background-image: url(./static/avatars/007m.jpg)"></span>
+                                        </div>
+                                        <div class="col">
+                                            <div class="text-truncate">
+                                                <strong>Perren Keemar</strong> and 3 others followed you.
+                                            </div>
+                                            <div class="text-muted">2 days ago</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="row">
+                                        <div class="col-auto">
+                                            <span class="avatar">SA</span>
+                                        </div>
+                                        <div class="col">
+                                            <div class="text-truncate">
+                                                <strong>Sunny Airey</strong> upload 3 new photos to category <strong>Inspirations</strong>.
+                                            </div>
+                                            <div class="text-muted">2 days ago</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="row">
+                                        <div class="col-auto">
+                                            <span class="avatar" style="background-image: url(./static/avatars/009m.jpg)"></span>
+                                        </div>
+                                        <div class="col">
+                                            <div class="text-truncate">
+                                                <strong>Geoffry Flaunders</strong> made a <strong>$10</strong> donation.
+                                            </div>
+                                            <div class="text-muted">2 days ago</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="row">
+                                        <div class="col-auto">
+                                            <span class="avatar" style="background-image: url(./static/avatars/010m.jpg)"></span>
+                                        </div>
+                                        <div class="col">
+                                            <div class="text-truncate">
+                                                <strong>Thatcher Keel</strong> created a profile.
+                                            </div>
+                                            <div class="text-muted">3 days ago</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="row">
+                                        <div class="col-auto">
+                                            <span class="avatar" style="background-image: url(./static/avatars/005f.jpg)"></span>
+                                        </div>
+                                        <div class="col">
+                                            <div class="text-truncate">
+                                                <strong>Dyann Escala</strong> hosted the event <strong>Tabler UI Birthday</strong>.
+                                            </div>
+                                            <div class="text-muted">4 days ago</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="row">
+                                        <div class="col-auto">
+                                            <span class="avatar" style="background-image: url(./static/avatars/006f.jpg)"></span>
+                                        </div>
+                                        <div class="col">
+                                            <div class="text-truncate">
+                                                <strong>Avivah Mugleston</strong> mentioned you on <strong>Best of 2020</strong>.
+                                            </div>
+                                            <div class="text-muted">2 days ago</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="row">
+                                        <div class="col-auto">
+                                            <span class="avatar">AA</span>
+                                        </div>
+                                        <div class="col">
+                                            <div class="text-truncate">
+                                                <strong>Arlie Armstead</strong> sent a Review Request to <strong>Amanda Blake</strong>.
+                                            </div>
+                                            <div class="text-muted">2 days ago</div>
                                         </div>
                                     </div>
                                 </div>
@@ -568,672 +604,809 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- Mobile Menu start -->
-            <div class="mobile-menu-area">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <div class="mobile-menu">
-                                <nav id="dropdown">
-                                    <ul class="mobile-menu-nav">
-                                        <li><a data-toggle="collapse" data-target="#Charts" href="#">Home <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
-                                            <ul class="collapse dropdown-header-top">
-                                                <li><a href="index.html">Dashboard v.1</a></li>
-                                                <li><a href="index-1.html">Dashboard v.2</a></li>
-                                                <li><a href="index-3.html">Dashboard v.3</a></li>
-                                                <li><a href="product-list.html">Product List</a></li>
-                                                <li><a href="product-edit.html">Product Edit</a></li>
-                                                <li><a href="product-detail.html">Product Detail</a></li>
-                                                <li><a href="product-cart.html">Product Cart</a></li>
-                                                <li><a href="product-payment.html">Product Payment</a></li>
-                                                <li><a href="analytics.html">Analytics</a></li>
-                                                <li><a href="widgets.html">Widgets</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a data-toggle="collapse" data-target="#demo" href="#">Mailbox <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
-                                            <ul id="demo" class="collapse dropdown-header-top">
-                                                <li><a href="mailbox.html">Inbox</a>
-                                                </li>
-                                                <li><a href="mailbox-view.html">View Mail</a>
-                                                </li>
-                                                <li><a href="mailbox-compose.html">Compose Mail</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a data-toggle="collapse" data-target="#others" href="#">Miscellaneous <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
-                                            <ul id="others" class="collapse dropdown-header-top">
-                                                <li><a href="file-manager.html">File Manager</a></li>
-                                                <li><a href="contacts.html">Contacts Client</a></li>
-                                                <li><a href="projects.html">Project</a></li>
-                                                <li><a href="project-details.html">Project Details</a></li>
-                                                <li><a href="blog.html">Blog</a></li>
-                                                <li><a href="blog-details.html">Blog Details</a></li>
-                                                <li><a href="404.html">404 Page</a></li>
-                                                <li><a href="500.html">500 Page</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a data-toggle="collapse" data-target="#Miscellaneousmob" href="#">Interface <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
-                                            <ul id="Miscellaneousmob" class="collapse dropdown-header-top">
-                                                <li><a href="google-map.html">Google Map</a>
-                                                </li>
-                                                <li><a href="data-maps.html">Data Maps</a>
-                                                </li>
-                                                <li><a href="pdf-viewer.html">Pdf Viewer</a>
-                                                </li>
-                                                <li><a href="x-editable.html">X-Editable</a>
-                                                </li>
-                                                <li><a href="code-editor.html">Code Editor</a>
-                                                </li>
-                                                <li><a href="tree-view.html">Tree View</a>
-                                                </li>
-                                                <li><a href="preloader.html">Preloader</a>
-                                                </li>
-                                                <li><a href="images-cropper.html">Images Cropper</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a data-toggle="collapse" data-target="#Chartsmob" href="#">Charts <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
-                                            <ul id="Chartsmob" class="collapse dropdown-header-top">
-                                                <li><a href="bar-charts.html">Bar Charts</a>
-                                                </li>
-                                                <li><a href="line-charts.html">Line Charts</a>
-                                                </li>
-                                                <li><a href="area-charts.html">Area Charts</a>
-                                                </li>
-                                                <li><a href="rounded-chart.html">Rounded Charts</a>
-                                                </li>
-                                                <li><a href="c3.html">C3 Charts</a>
-                                                </li>
-                                                <li><a href="sparkline.html">Sparkline Charts</a>
-                                                </li>
-                                                <li><a href="peity.html">Peity Charts</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a data-toggle="collapse" data-target="#Tablesmob" href="#">Tables <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
-                                            <ul id="Tablesmob" class="collapse dropdown-header-top">
-                                                <li><a href="static-table.html">Static Table</a>
-                                                </li>
-                                                <li><a href="data-table.html">Data Table</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a data-toggle="collapse" data-target="#formsmob" href="#">Forms <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
-                                            <ul id="formsmob" class="collapse dropdown-header-top">
-                                                <li><a href="basic-form-element.html">Basic Form Elements</a>
-                                                </li>
-                                                <li><a href="advance-form-element.html">Advanced Form Elements</a>
-                                                </li>
-                                                <li><a href="password-meter.html">Password Meter</a>
-                                                </li>
-                                                <li><a href="multi-upload.html">Multi Upload</a>
-                                                </li>
-                                                <li><a href="tinymc.html">Text Editor</a>
-                                                </li>
-                                                <li><a href="dual-list-box.html">Dual List Box</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a data-toggle="collapse" data-target="#Appviewsmob" href="#">App views <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
-                                            <ul id="Appviewsmob" class="collapse dropdown-header-top">
-                                                <li><a href="basic-form-element.html">Basic Form Elements</a>
-                                                </li>
-                                                <li><a href="advance-form-element.html">Advanced Form Elements</a>
-                                                </li>
-                                                <li><a href="password-meter.html">Password Meter</a>
-                                                </li>
-                                                <li><a href="multi-upload.html">Multi Upload</a>
-                                                </li>
-                                                <li><a href="tinymc.html">Text Editor</a>
-                                                </li>
-                                                <li><a href="dual-list-box.html">Dual List Box</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a data-toggle="collapse" data-target="#Pagemob" href="#">Pages <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
-                                            <ul id="Pagemob" class="collapse dropdown-header-top">
-                                                <li><a href="login.html">Login</a>
-                                                </li>
-                                                <li><a href="register.html">Register</a>
-                                                </li>
-                                                <li><a href="lock.html">Lock</a>
-                                                </li>
-                                                <li><a href="password-recovery.html">Password Recovery</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Mobile Menu end -->
-            <div class="breadcome-area">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <div class="breadcome-list">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                        <ul class="breadcome-menu">
-                                            <li><a href="#">Home</a> <span class="bread-slash">/</span>
-                                            </li>
-                                            <li><span class="bread-blod">Dashboard V.1</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="section-admin container-fluid">
-            <div class="row admin text-center">
-                <div class="col-md-12">
-                    <div class="row">
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                            <div class="admin-content analysis-progrebar-ctn res-mg-t-15">
-                                <h4 class="text-left text-uppercase"><b>Orders</b></h4>
-                                <div class="row vertical-center-box vertical-center-box-tablet">
-                                    <div class="col-xs-3 mar-bot-15 text-left">
-                                        <label class="label bg-green">30% <i class="fa fa-level-up" aria-hidden="true"></i></label>
-                                    </div>
-                                    <div class="col-xs-9 cus-gh-hd-pro">
-                                        <h2 class="text-right no-margin">10,000</h2>
-                                    </div>
-                                </div>
-                                <div class="progress progress-mini">
-                                    <div style="width: 78%;" class="progress-bar bg-green"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" style="margin-bottom:1px;">
-                            <div class="admin-content analysis-progrebar-ctn res-mg-t-30">
-                                <h4 class="text-left text-uppercase"><b>Tax Deduction</b></h4>
-                                <div class="row vertical-center-box vertical-center-box-tablet">
-                                    <div class="text-left col-xs-3 mar-bot-15">
-                                        <label class="label bg-red">15% <i class="fa fa-level-down" aria-hidden="true"></i></label>
-                                    </div>
-                                    <div class="col-xs-9 cus-gh-hd-pro">
-                                        <h2 class="text-right no-margin">5,000</h2>
-                                    </div>
-                                </div>
-                                <div class="progress progress-mini">
-                                    <div style="width: 38%;" class="progress-bar progress-bar-danger bg-red"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                            <div class="admin-content analysis-progrebar-ctn res-mg-t-30">
-                                <h4 class="text-left text-uppercase"><b>Revenue</b></h4>
-                                <div class="row vertical-center-box vertical-center-box-tablet">
-                                    <div class="text-left col-xs-3 mar-bot-15">
-                                        <label class="label bg-blue">50% <i class="fa fa-level-up" aria-hidden="true"></i></label>
-                                    </div>
-                                    <div class="col-xs-9 cus-gh-hd-pro">
-                                        <h2 class="text-right no-margin">$70,000</h2>
-                                    </div>
-                                </div>
-                                <div class="progress progress-mini">
-                                    <div style="width: 60%;" class="progress-bar bg-blue"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                            <div class="admin-content analysis-progrebar-ctn res-mg-t-30">
-                                <h4 class="text-left text-uppercase"><b>Yearly Sales</b></h4>
-                                <div class="row vertical-center-box vertical-center-box-tablet">
-                                    <div class="text-left col-xs-3 mar-bot-15">
-                                        <label class="label bg-purple">80% <i class="fa fa-level-up" aria-hidden="true"></i></label>
-                                    </div>
-                                    <div class="col-xs-9 cus-gh-hd-pro">
-                                        <h2 class="text-right no-margin">$100,000</h2>
-                                    </div>
-                                </div>
-                                <div class="progress progress-mini">
-                                    <div style="width: 60%;" class="progress-bar bg-purple"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="product-sales-area mg-tb-30">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                        <div class="product-sales-chart">
-                            <div class="portlet-title">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                        <div class="caption pro-sl-hd">
-                                            <span class="caption-subject text-uppercase"><b>Product Sales</b></span>
+                <div class="col-md-4">
+                    <div class="row row-cards">
+                        <div class="col-12">
+                            <div class="card card-sm">
+                                <div class="card-body">
+                                    <div class="row align-items-center">
+                                        <div class="col-auto">
+                            <span class="bg-blue text-white avatar"><!-- Download SVG icon from http://tabler-icons.io/i/currency-dollar -->
+                              <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M16.7 8a3 3 0 0 0 -2.7 -2h-4a3 3 0 0 0 0 6h4a3 3 0 0 1 0 6h-4a3 3 0 0 1 -2.7 -2" /><path d="M12 3v3m0 12v3" /></svg>
+                            </span>
                                         </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                        <div class="actions graph-rp">
-                                            <div class="btn-group" data-toggle="buttons">
-                                                <label class="btn btn-grey active">
-                                                    <input type="radio" name="options" class="toggle" id="option1" checked="">Today</label>
-                                                <label class="btn btn-grey">
-                                                    <input type="radio" name="options" class="toggle" id="option2">Week</label>
+                                        <div class="col">
+                                            <div class="font-weight-medium">
+                                                132 Sales
+                                            </div>
+                                            <div class="text-muted">
+                                                12 waiting payments
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <ul class="list-inline cus-product-sl-rp">
-                                <li>
-                                    <h5><i class="fa fa-circle" style="color: #24caa1;"></i>Bags</h5>
-                                </li>
-                                <li>
-                                    <h5><i class="fa fa-circle" style="color: #00b5c2;"></i>Shoes</h5>
-                                </li>
-                                <li>
-                                    <h5><i class="fa fa-circle" style="color: #ff7f5a;"></i>Jewelery</h5>
-                                </li>
-                            </ul>
-                            <div id="morris-area-chart" style="height: 356px;"></div>
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                        <div class="white-box analytics-info-cs mg-b-10 res-mg-t-30">
-                            <h3 class="box-title">Total Visit</h3>
-                            <ul class="list-inline two-part-sp">
-                                <li>
-                                    <div id="sparklinedash"></div>
-                                </li>
-                                <li class="text-right sp-cn-r"><i class="fa fa-level-up" aria-hidden="true"></i> <span class="counter text-success">8659</span></li>
-                            </ul>
-                        </div>
-                        <div class="white-box analytics-info-cs mg-b-10">
-                            <h3 class="box-title">Total Page Views</h3>
-                            <ul class="list-inline two-part-sp">
-                                <li>
-                                    <div id="sparklinedash2"></div>
-                                </li>
-                                <li class="text-right"><i class="fa fa-level-up" aria-hidden="true"></i> <span class="counter text-purple">7469</span></li>
-                            </ul>
-                        </div>
-                        <div class="white-box analytics-info-cs mg-b-10">
-                            <h3 class="box-title">Unique Visitor</h3>
-                            <ul class="list-inline two-part-sp">
-                                <li>
-                                    <div id="sparklinedash3"></div>
-                                </li>
-                                <li class="text-right"><i class="fa fa-level-up" aria-hidden="true"></i> <span class="counter text-info">6011</span></li>
-                            </ul>
-                        </div>
-                        <div class="white-box analytics-info-cs">
-                            <h3 class="box-title">Bounce Rate</h3>
-                            <ul class="list-inline two-part-sp">
-                                <li>
-                                    <div id="sparklinedash4"></div>
-                                </li>
-                                <li class="text-right"><i class="fa fa-level-down" aria-hidden="true"></i> <span class="text-danger">18%</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="traffic-analysis-area">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                        <div class="white-box tranffic-als-inner">
-                            <h3 class="box-title"><small class="pull-right m-t-10 text-success"><i class="fa fa-sort-asc"></i> 18% last month</small> Site Traffic</h3>
-                            <div class="stats-row">
-                                <div class="stat-item">
-                                    <h6>Overall Growth</h6>
-                                    <b>80.40%</b></div>
-                                <div class="stat-item">
-                                    <h6>Montly</h6>
-                                    <b>15.40%</b></div>
-                                <div class="stat-item">
-                                    <h6>Day</h6>
-                                    <b>5.50%</b></div>
-                            </div>
-                            <div id="sparkline8"></div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                        <div class="white-box tranffic-als-inner res-mg-t-30">
-                            <h3 class="box-title"><small class="pull-right m-t-10 text-danger"><i class="fa fa-sort-desc"></i> 18% last month</small>Site Traffic</h3>
-                            <div class="stats-row">
-                                <div class="stat-item">
-                                    <h6>Overall Growth</h6>
-                                    <b>80.40%</b></div>
-                                <div class="stat-item">
-                                    <h6>Montly</h6>
-                                    <b>15.40%</b></div>
-                                <div class="stat-item">
-                                    <h6>Day</h6>
-                                    <b>5.50%</b></div>
-                            </div>
-                            <div id="sparkline9"></div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                        <div class="white-box tranffic-als-inner res-mg-t-30">
-                            <h3 class="box-title"><small class="pull-right m-t-10 text-success"><i class="fa fa-sort-asc"></i> 18% last month</small>Site Traffic</h3>
-                            <div class="stats-row">
-                                <div class="stat-item">
-                                    <h6>Overall Growth</h6>
-                                    <b>80.40%</b></div>
-                                <div class="stat-item">
-                                    <h6>Montly</h6>
-                                    <b>15.40%</b></div>
-                                <div class="stat-item">
-                                    <h6>Day</h6>
-                                    <b>5.50%</b></div>
-                            </div>
-                            <div id="sparkline10"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="product-new-list-area">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                        <div class="single-new-trend mg-t-30">
-                            <a href="#"><img src="img/new-product/5.jpg" alt=""></a>
-                            <div class="overlay-content">
-                                <a href="#">
-                                    <h2>$280</h2>
-                                </a>
-                                <a href="#" class="btn-small">Now</a>
-                                <div class="product-action">
-                                    <ul>
-                                        <li>
-                                            <a data-toggle="tooltip" title="Shopping" href="#"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a>
-                                        </li>
-                                        <li>
-                                            <a data-toggle="tooltip" title="Quick view" href="#"><i class="fa fa-heart" aria-hidden="true"></i></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <a href="#">
-                                    <h4>Princes Diamond</h4>
-                                </a>
-                                <div class="pro-rating">
-                                    <i class="fa fa-star color"></i>
-                                    <i class="fa fa-star color"></i>
-                                    <i class="fa fa-star color"></i>
-                                    <i class="fa fa-star color"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                        <div class="single-new-trend mg-t-30">
-                            <a href="#"><img src="img/new-product/6.jpg" alt=""></a>
-                            <div class="overlay-content">
-                                <a href="#">
-                                    <h2>$280</h2>
-                                </a>
-                                <a href="#" class="btn-small">Now</a>
-                                <div class="product-action">
-                                    <ul>
-                                        <li>
-                                            <a data-toggle="tooltip" title="Shopping" href="#"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a>
-                                        </li>
-                                        <li>
-                                            <a data-toggle="tooltip" title="Quick view" href="#"><i class="fa fa-heart" aria-hidden="true"></i></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <a href="#">
-                                    <h4>Princes Diamond</h4>
-                                </a>
-                                <div class="pro-rating">
-                                    <i class="fa fa-star color"></i>
-                                    <i class="fa fa-star color"></i>
-                                    <i class="fa fa-star color"></i>
-                                    <i class="fa fa-star color"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                        <div class="single-new-trend mg-t-30">
-                            <a href="#"><img src="img/new-product/7.jpg" alt=""></a>
-                            <div class="overlay-content">
-                                <a href="#">
-                                    <h2>$280</h2>
-                                </a>
-                                <a href="#" class="btn-small">Now</a>
-                                <div class="product-action">
-                                    <ul>
-                                        <li>
-                                            <a data-toggle="tooltip" title="Shopping" href="#"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a>
-                                        </li>
-                                        <li>
-                                            <a data-toggle="tooltip" title="Quick view" href="#"><i class="fa fa-heart" aria-hidden="true"></i></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <a href="#">
-                                    <h4>Princes Diamond</h4>
-                                </a>
-                                <div class="pro-rating">
-                                    <i class="fa fa-star color"></i>
-                                    <i class="fa fa-star color"></i>
-                                    <i class="fa fa-star color"></i>
-                                    <i class="fa fa-star color"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                        <div class="single-new-trend mg-t-30">
-                            <a href="#"><img src="img/new-product/5.jpg" alt=""></a>
-                            <div class="overlay-content">
-                                <a href="#">
-                                    <h2>$280</h2>
-                                </a>
-                                <a href="#" class="btn-small">Now</a>
-                                <div class="product-action">
-                                    <ul>
-                                        <li>
-                                            <a data-toggle="tooltip" title="Shopping" href="#"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a>
-                                        </li>
-                                        <li>
-                                            <a data-toggle="tooltip" title="Quick view" href="#"><i class="fa fa-heart" aria-hidden="true"></i></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <a href="#">
-                                    <h4>Princes Diamond</h4>
-                                </a>
-                                <div class="pro-rating">
-                                    <i class="fa fa-star color"></i>
-                                    <i class="fa fa-star color"></i>
-                                    <i class="fa fa-star color"></i>
-                                    <i class="fa fa-star color"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="product-sales-area mg-tb-30">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                        <div class="product-sales-chart">
-                            <div class="portlet-title">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                        <div class="caption pro-sl-hd">
-                                            <span class="caption-subject text-uppercase"><b>Order Statistic</b></span>
+                        <div class="col-12">
+                            <div class="card card-sm">
+                                <div class="card-body">
+                                    <div class="row align-items-center">
+                                        <div class="col-auto">
+                            <span class="bg-green text-white avatar"><!-- Download SVG icon from http://tabler-icons.io/i/shopping-cart -->
+                              <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><circle cx="6" cy="19" r="2" /><circle cx="17" cy="19" r="2" /><path d="M17 17h-11v-14h-2" /><path d="M6 5l14 1l-1 7h-13" /></svg>
+                            </span>
                                         </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                        <div class="actions graph-rp">
-                                            <a href="#" class="btn btn-dark-blue btn-circle active tip-top" data-toggle="tooltip" title="Upload">
-                                                <i class="fa fa-cloud-download" aria-hidden="true"></i>
-                                            </a>
-                                            <a href="#" class="btn btn-dark btn-circle active tip-top" data-toggle="tooltip" title="Refresh">
-                                                <i class="fa fa-reply" aria-hidden="true"></i>
-                                            </a>
-                                            <a href="#" class="btn btn-blue-grey btn-circle active tip-top" data-toggle="tooltip" title="Delete">
-                                                <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                            </a>
+                                        <div class="col">
+                                            <div class="font-weight-medium">
+                                                78 Orders
+                                            </div>
+                                            <div class="text-muted">
+                                                32 shipped
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <ul class="list-inline cus-product-sl-rp">
-                                <li>
-                                    <h5><i class="fa fa-circle" style="color: #24caa1;"></i>Bags</h5>
+                        </div>
+                        <div class="col-12">
+                            <div class="card card-sm">
+                                <div class="card-body">
+                                    <div class="row align-items-center">
+                                        <div class="col-auto">
+                            <span class="bg-yellow text-white avatar"><!-- Download SVG icon from http://tabler-icons.io/i/users -->
+                              <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><circle cx="9" cy="7" r="4" /><path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /><path d="M21 21v-2a4 4 0 0 0 -3 -3.85" /></svg>
+                            </span>
+                                        </div>
+                                        <div class="col">
+                                            <div class="font-weight-medium">
+                                                1352 Members
+                                            </div>
+                                            <div class="text-muted">
+                                                163 registered today
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="card card-sm">
+                                <div class="card-body">
+                                    <div class="row align-items-center">
+                                        <div class="col-auto">
+                            <span class="bg-twitter text-white avatar"><!-- Download SVG icon from http://tabler-icons.io/i/brand-twitter -->
+                              <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" /></svg>
+                            </span>
+                                        </div>
+                                        <div class="col">
+                                            <div class="font-weight-medium">
+                                                623 Shares
+                                            </div>
+                                            <div class="text-muted">
+                                                16 today
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="card card-sm">
+                                <div class="card-body">
+                                    <div class="row align-items-center">
+                                        <div class="col-auto">
+                            <span class="bg-facebook text-white avatar"><!-- Download SVG icon from http://tabler-icons.io/i/brand-facebook -->
+                              <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" /></svg>
+                            </span>
+                                        </div>
+                                        <div class="col">
+                                            <div class="font-weight-medium">
+                                                132 Likes
+                                            </div>
+                                            <div class="text-muted">
+                                                21 today
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-8">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Most Visited Pages</h3>
+                        </div>
+                        <div class="card-table table-responsive">
+                            <table class="table table-vcenter">
+                                <thead>
+                                <tr>
+                                    <th>Page name</th>
+                                    <th>Visitors</th>
+                                    <th>Unique</th>
+                                    <th colspan="2">Bounce rate</th>
+                                </tr>
+                                </thead>
+                                <tr>
+                                    <td>
+                                        /about.html
+                                        <a href="#" class="ms-1" aria-label="Open website"><!-- Download SVG icon from http://tabler-icons.io/i/link -->
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" /><path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" /></svg>
+                                        </a>
+                                    </td>
+                                    <td class="text-muted">4,896</td>
+                                    <td class="text-muted">3,654</td>
+                                    <td class="text-muted">82.54%</td>
+                                    <td class="text-end w-1">
+                                        <div class="chart-sparkline chart-sparkline-sm" id="sparkline-bounce-rate-1"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        /special-promo.html
+                                        <a href="#" class="ms-1" aria-label="Open website"><!-- Download SVG icon from http://tabler-icons.io/i/link -->
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" /><path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" /></svg>
+                                        </a>
+                                    </td>
+                                    <td class="text-muted">3,652</td>
+                                    <td class="text-muted">3,215</td>
+                                    <td class="text-muted">76.29%</td>
+                                    <td class="text-end w-1">
+                                        <div class="chart-sparkline chart-sparkline-sm" id="sparkline-bounce-rate-2"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        /news/1,new-ui-kit.html
+                                        <a href="#" class="ms-1" aria-label="Open website"><!-- Download SVG icon from http://tabler-icons.io/i/link -->
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" /><path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" /></svg>
+                                        </a>
+                                    </td>
+                                    <td class="text-muted">3,256</td>
+                                    <td class="text-muted">2,865</td>
+                                    <td class="text-muted">72.65%</td>
+                                    <td class="text-end w-1">
+                                        <div class="chart-sparkline chart-sparkline-sm" id="sparkline-bounce-rate-3"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        /lorem-ipsum-dolor-sit-amet-very-long-url.html
+                                        <a href="#" class="ms-1" aria-label="Open website"><!-- Download SVG icon from http://tabler-icons.io/i/link -->
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" /><path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" /></svg>
+                                        </a>
+                                    </td>
+                                    <td class="text-muted">986</td>
+                                    <td class="text-muted">865</td>
+                                    <td class="text-muted">44.89%</td>
+                                    <td class="text-end w-1">
+                                        <div class="chart-sparkline chart-sparkline-sm" id="sparkline-bounce-rate-4"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        /colors.html
+                                        <a href="#" class="ms-1" aria-label="Open website"><!-- Download SVG icon from http://tabler-icons.io/i/link -->
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" /><path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" /></svg>
+                                        </a>
+                                    </td>
+                                    <td class="text-muted">912</td>
+                                    <td class="text-muted">822</td>
+                                    <td class="text-muted">41.12%</td>
+                                    <td class="text-end w-1">
+                                        <div class="chart-sparkline chart-sparkline-sm" id="sparkline-bounce-rate-5"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        /docs/index.html
+                                        <a href="#" class="ms-1" aria-label="Open website"><!-- Download SVG icon from http://tabler-icons.io/i/link -->
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" /><path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" /></svg>
+                                        </a>
+                                    </td>
+                                    <td class="text-muted">855</td>
+                                    <td class="text-muted">798</td>
+                                    <td class="text-muted">32.65%</td>
+                                    <td class="text-end w-1">
+                                        <div class="chart-sparkline chart-sparkline-sm" id="sparkline-bounce-rate-6"></div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <a href="https://github.com/sponsors/codecalm" class="card card-sponsor" target="_blank" rel="noopener" style="background-image: url(./static/sponsor-banner-homepage.svg)" aria-label="Sponsor Tabler!">
+                        <div class="card-body"></div>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Social Media Traffic</h3>
+                        </div>
+                        <table class="table card-table table-vcenter">
+                            <thead>
+                            <tr>
+                                <th>Network</th>
+                                <th colspan="2">Visitors</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Instagram</td>
+                                <td>3,550</td>
+                                <td class="w-50">
+                                    <div class="progress progress-xs">
+                                        <div class="progress-bar bg-primary" style="width: 71.0%"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Twitter</td>
+                                <td>1,798</td>
+                                <td class="w-50">
+                                    <div class="progress progress-xs">
+                                        <div class="progress-bar bg-primary" style="width: 35.96%"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Facebook</td>
+                                <td>1,245</td>
+                                <td class="w-50">
+                                    <div class="progress progress-xs">
+                                        <div class="progress-bar bg-primary" style="width: 24.9%"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>TikTok</td>
+                                <td>986</td>
+                                <td class="w-50">
+                                    <div class="progress progress-xs">
+                                        <div class="progress-bar bg-primary" style="width: 19.72%"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Pinterest</td>
+                                <td>854</td>
+                                <td class="w-50">
+                                    <div class="progress progress-xs">
+                                        <div class="progress-bar bg-primary" style="width: 17.08%"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>VK</td>
+                                <td>650</td>
+                                <td class="w-50">
+                                    <div class="progress progress-xs">
+                                        <div class="progress-bar bg-primary" style="width: 13.0%"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Pinterest</td>
+                                <td>420</td>
+                                <td class="w-50">
+                                    <div class="progress progress-xs">
+                                        <div class="progress-bar bg-primary" style="width: 8.4%"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-8">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Tasks</h3>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table card-table table-vcenter">
+                                <tr>
+                                    <td class="w-1 pe-0">
+                                        <input type="checkbox" class="form-check-input m-0 align-middle" aria-label="Select task" checked >
+                                    </td>
+                                    <td class="w-100">
+                                        <a href="#" class="text-reset">Extend the data model.</a>
+                                    </td>
+                                    <td class="text-nowrap text-muted">
+                                        <!-- Download SVG icon from http://tabler-icons.io/i/calendar -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><rect x="4" y="5" width="16" height="16" rx="2" /><line x1="16" y1="3" x2="16" y2="7" /><line x1="8" y1="3" x2="8" y2="7" /><line x1="4" y1="11" x2="20" y2="11" /><line x1="11" y1="15" x2="12" y2="15" /><line x1="12" y1="15" x2="12" y2="18" /></svg>
+                                        January 01, 2019
+                                    </td>
+                                    <td class="text-nowrap">
+                                        <a href="#" class="text-muted">
+                                            <!-- Download SVG icon from http://tabler-icons.io/i/check -->
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" /></svg>
+                                            2/7
+                                        </a>
+                                    </td>
+                                    <td class="text-nowrap">
+                                        <a href="#" class="text-muted">
+                                            <!-- Download SVG icon from http://tabler-icons.io/i/message -->
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 21v-13a3 3 0 0 1 3 -3h10a3 3 0 0 1 3 3v6a3 3 0 0 1 -3 3h-9l-4 4" /><line x1="8" y1="9" x2="16" y2="9" /><line x1="8" y1="13" x2="14" y2="13" /></svg>
+                                            3</a>
+                                    </td>
+                                    <td>
+                                        <span class="avatar avatar-sm" style="background-image: url(./static/avatars/000m.jpg)"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="w-1 pe-0">
+                                        <input type="checkbox" class="form-check-input m-0 align-middle" aria-label="Select task" >
+                                    </td>
+                                    <td class="w-100">
+                                        <a href="#" class="text-reset">Verify the event flow.</a>
+                                    </td>
+                                    <td class="text-nowrap text-muted">
+                                        <!-- Download SVG icon from http://tabler-icons.io/i/calendar -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><rect x="4" y="5" width="16" height="16" rx="2" /><line x1="16" y1="3" x2="16" y2="7" /><line x1="8" y1="3" x2="8" y2="7" /><line x1="4" y1="11" x2="20" y2="11" /><line x1="11" y1="15" x2="12" y2="15" /><line x1="12" y1="15" x2="12" y2="18" /></svg>
+                                        January 01, 2019
+                                    </td>
+                                    <td class="text-nowrap">
+                                        <a href="#" class="text-muted">
+                                            <!-- Download SVG icon from http://tabler-icons.io/i/check -->
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" /></svg>
+                                            3/10
+                                        </a>
+                                    </td>
+                                    <td class="text-nowrap">
+                                        <a href="#" class="text-muted">
+                                            <!-- Download SVG icon from http://tabler-icons.io/i/message -->
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 21v-13a3 3 0 0 1 3 -3h10a3 3 0 0 1 3 3v6a3 3 0 0 1 -3 3h-9l-4 4" /><line x1="8" y1="9" x2="16" y2="9" /><line x1="8" y1="13" x2="14" y2="13" /></svg>
+                                            6</a>
+                                    </td>
+                                    <td>
+                                        <span class="avatar avatar-sm">JL</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="w-1 pe-0">
+                                        <input type="checkbox" class="form-check-input m-0 align-middle" aria-label="Select task" >
+                                    </td>
+                                    <td class="w-100">
+                                        <a href="#" class="text-reset">Database backup and maintenance</a>
+                                    </td>
+                                    <td class="text-nowrap text-muted">
+                                        <!-- Download SVG icon from http://tabler-icons.io/i/calendar -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><rect x="4" y="5" width="16" height="16" rx="2" /><line x1="16" y1="3" x2="16" y2="7" /><line x1="8" y1="3" x2="8" y2="7" /><line x1="4" y1="11" x2="20" y2="11" /><line x1="11" y1="15" x2="12" y2="15" /><line x1="12" y1="15" x2="12" y2="18" /></svg>
+                                        January 01, 2019
+                                    </td>
+                                    <td class="text-nowrap">
+                                        <a href="#" class="text-muted">
+                                            <!-- Download SVG icon from http://tabler-icons.io/i/check -->
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" /></svg>
+                                            0/6
+                                        </a>
+                                    </td>
+                                    <td class="text-nowrap">
+                                        <a href="#" class="text-muted">
+                                            <!-- Download SVG icon from http://tabler-icons.io/i/message -->
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 21v-13a3 3 0 0 1 3 -3h10a3 3 0 0 1 3 3v6a3 3 0 0 1 -3 3h-9l-4 4" /><line x1="8" y1="9" x2="16" y2="9" /><line x1="8" y1="13" x2="14" y2="13" /></svg>
+                                            1</a>
+                                    </td>
+                                    <td>
+                                        <span class="avatar avatar-sm" style="background-image: url(./static/avatars/002m.jpg)"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="w-1 pe-0">
+                                        <input type="checkbox" class="form-check-input m-0 align-middle" aria-label="Select task" checked >
+                                    </td>
+                                    <td class="w-100">
+                                        <a href="#" class="text-reset">Identify the implementation team.</a>
+                                    </td>
+                                    <td class="text-nowrap text-muted">
+                                        <!-- Download SVG icon from http://tabler-icons.io/i/calendar -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><rect x="4" y="5" width="16" height="16" rx="2" /><line x1="16" y1="3" x2="16" y2="7" /><line x1="8" y1="3" x2="8" y2="7" /><line x1="4" y1="11" x2="20" y2="11" /><line x1="11" y1="15" x2="12" y2="15" /><line x1="12" y1="15" x2="12" y2="18" /></svg>
+                                        January 01, 2019
+                                    </td>
+                                    <td class="text-nowrap">
+                                        <a href="#" class="text-muted">
+                                            <!-- Download SVG icon from http://tabler-icons.io/i/check -->
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" /></svg>
+                                            6/10
+                                        </a>
+                                    </td>
+                                    <td class="text-nowrap">
+                                        <a href="#" class="text-muted">
+                                            <!-- Download SVG icon from http://tabler-icons.io/i/message -->
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 21v-13a3 3 0 0 1 3 -3h10a3 3 0 0 1 3 3v6a3 3 0 0 1 -3 3h-9l-4 4" /><line x1="8" y1="9" x2="16" y2="9" /><line x1="8" y1="13" x2="14" y2="13" /></svg>
+                                            12</a>
+                                    </td>
+                                    <td>
+                                        <span class="avatar avatar-sm" style="background-image: url(./static/avatars/003m.jpg)"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="w-1 pe-0">
+                                        <input type="checkbox" class="form-check-input m-0 align-middle" aria-label="Select task" >
+                                    </td>
+                                    <td class="w-100">
+                                        <a href="#" class="text-reset">Define users and workflow</a>
+                                    </td>
+                                    <td class="text-nowrap text-muted">
+                                        <!-- Download SVG icon from http://tabler-icons.io/i/calendar -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><rect x="4" y="5" width="16" height="16" rx="2" /><line x1="16" y1="3" x2="16" y2="7" /><line x1="8" y1="3" x2="8" y2="7" /><line x1="4" y1="11" x2="20" y2="11" /><line x1="11" y1="15" x2="12" y2="15" /><line x1="12" y1="15" x2="12" y2="18" /></svg>
+                                        January 01, 2019
+                                    </td>
+                                    <td class="text-nowrap">
+                                        <a href="#" class="text-muted">
+                                            <!-- Download SVG icon from http://tabler-icons.io/i/check -->
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" /></svg>
+                                            3/7
+                                        </a>
+                                    </td>
+                                    <td class="text-nowrap">
+                                        <a href="#" class="text-muted">
+                                            <!-- Download SVG icon from http://tabler-icons.io/i/message -->
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 21v-13a3 3 0 0 1 3 -3h10a3 3 0 0 1 3 3v6a3 3 0 0 1 -3 3h-9l-4 4" /><line x1="8" y1="9" x2="16" y2="9" /><line x1="8" y1="13" x2="14" y2="13" /></svg>
+                                            5</a>
+                                    </td>
+                                    <td>
+                                        <span class="avatar avatar-sm" style="background-image: url(./static/avatars/000f.jpg)"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="w-1 pe-0">
+                                        <input type="checkbox" class="form-check-input m-0 align-middle" aria-label="Select task" checked >
+                                    </td>
+                                    <td class="w-100">
+                                        <a href="#" class="text-reset">Check Pull Requests</a>
+                                    </td>
+                                    <td class="text-nowrap text-muted">
+                                        <!-- Download SVG icon from http://tabler-icons.io/i/calendar -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><rect x="4" y="5" width="16" height="16" rx="2" /><line x1="16" y1="3" x2="16" y2="7" /><line x1="8" y1="3" x2="8" y2="7" /><line x1="4" y1="11" x2="20" y2="11" /><line x1="11" y1="15" x2="12" y2="15" /><line x1="12" y1="15" x2="12" y2="18" /></svg>
+                                        January 01, 2019
+                                    </td>
+                                    <td class="text-nowrap">
+                                        <a href="#" class="text-muted">
+                                            <!-- Download SVG icon from http://tabler-icons.io/i/check -->
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" /></svg>
+                                            2/9
+                                        </a>
+                                    </td>
+                                    <td class="text-nowrap">
+                                        <a href="#" class="text-muted">
+                                            <!-- Download SVG icon from http://tabler-icons.io/i/message -->
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 21v-13a3 3 0 0 1 3 -3h10a3 3 0 0 1 3 3v6a3 3 0 0 1 -3 3h-9l-4 4" /><line x1="8" y1="9" x2="16" y2="9" /><line x1="8" y1="13" x2="14" y2="13" /></svg>
+                                            3</a>
+                                    </td>
+                                    <td>
+                                        <span class="avatar avatar-sm" style="background-image: url(./static/avatars/001f.jpg)"></span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Invoices</h3>
+                        </div>
+                        <div class="card-body border-bottom py-3">
+                            <div class="d-flex">
+                                <div class="text-muted">
+                                    Show
+                                    <div class="mx-2 d-inline-block">
+                                        <input type="text" class="form-control form-control-sm" value="8" size="3" aria-label="Invoices count">
+                                    </div>
+                                    entries
+                                </div>
+                                <div class="ms-auto text-muted">
+                                    Search:
+                                    <div class="ms-2 d-inline-block">
+                                        <input type="text" class="form-control form-control-sm" aria-label="Search invoice">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table card-table table-vcenter text-nowrap datatable">
+                                <thead>
+                                <tr>
+                                    <th class="w-1"><input class="form-check-input m-0 align-middle" type="checkbox" aria-label="Select all invoices"></th>
+                                    <th class="w-1">No. <!-- Download SVG icon from http://tabler-icons.io/i/chevron-up -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-sm text-dark icon-thick" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="6 15 12 9 18 15" /></svg>
+                                    </th>
+                                    <th>Invoice Subject</th>
+                                    <th>Client</th>
+                                    <th>VAT No.</th>
+                                    <th>Created</th>
+                                    <th>Status</th>
+                                    <th>Price</th>
+                                    <th></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td><input class="form-check-input m-0 align-middle" type="checkbox" aria-label="Select invoice"></td>
+                                    <td><span class="text-muted">001401</span></td>
+                                    <td><a href="invoice.html" class="text-reset" tabindex="-1">Design Works</a></td>
+                                    <td>
+                                        <span class="flag flag-country-us"></span>
+                                        Carlson Limited
+                                    </td>
+                                    <td>
+                                        87956621
+                                    </td>
+                                    <td>
+                                        15 Dec 2017
+                                    </td>
+                                    <td>
+                                        <span class="badge bg-success me-1"></span> Paid
+                                    </td>
+                                    <td>$887</td>
+                                    <td class="text-end">
+                            <span class="dropdown">
+                              <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown">Actions</button>
+                              <div class="dropdown-menu dropdown-menu-end">
+                                <a class="dropdown-item" href="#">
+                                  Action
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                  Another action
+                                </a>
+                              </div>
+                            </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input class="form-check-input m-0 align-middle" type="checkbox" aria-label="Select invoice"></td>
+                                    <td><span class="text-muted">001402</span></td>
+                                    <td><a href="invoice.html" class="text-reset" tabindex="-1">UX Wireframes</a></td>
+                                    <td>
+                                        <span class="flag flag-country-gb"></span>
+                                        Adobe
+                                    </td>
+                                    <td>
+                                        87956421
+                                    </td>
+                                    <td>
+                                        12 Apr 2017
+                                    </td>
+                                    <td>
+                                        <span class="badge bg-warning me-1"></span> Pending
+                                    </td>
+                                    <td>$1200</td>
+                                    <td class="text-end">
+                            <span class="dropdown">
+                              <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown">Actions</button>
+                              <div class="dropdown-menu dropdown-menu-end">
+                                <a class="dropdown-item" href="#">
+                                  Action
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                  Another action
+                                </a>
+                              </div>
+                            </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input class="form-check-input m-0 align-middle" type="checkbox" aria-label="Select invoice"></td>
+                                    <td><span class="text-muted">001403</span></td>
+                                    <td><a href="invoice.html" class="text-reset" tabindex="-1">New Dashboard</a></td>
+                                    <td>
+                                        <span class="flag flag-country-de"></span>
+                                        Bluewolf
+                                    </td>
+                                    <td>
+                                        87952621
+                                    </td>
+                                    <td>
+                                        23 Oct 2017
+                                    </td>
+                                    <td>
+                                        <span class="badge bg-warning me-1"></span> Pending
+                                    </td>
+                                    <td>$534</td>
+                                    <td class="text-end">
+                            <span class="dropdown">
+                              <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown">Actions</button>
+                              <div class="dropdown-menu dropdown-menu-end">
+                                <a class="dropdown-item" href="#">
+                                  Action
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                  Another action
+                                </a>
+                              </div>
+                            </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input class="form-check-input m-0 align-middle" type="checkbox" aria-label="Select invoice"></td>
+                                    <td><span class="text-muted">001404</span></td>
+                                    <td><a href="invoice.html" class="text-reset" tabindex="-1">Landing Page</a></td>
+                                    <td>
+                                        <span class="flag flag-country-br"></span>
+                                        Salesforce
+                                    </td>
+                                    <td>
+                                        87953421
+                                    </td>
+                                    <td>
+                                        2 Sep 2017
+                                    </td>
+                                    <td>
+                                        <span class="badge bg-secondary me-1"></span> Due in 2 Weeks
+                                    </td>
+                                    <td>$1500</td>
+                                    <td class="text-end">
+                            <span class="dropdown">
+                              <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown">Actions</button>
+                              <div class="dropdown-menu dropdown-menu-end">
+                                <a class="dropdown-item" href="#">
+                                  Action
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                  Another action
+                                </a>
+                              </div>
+                            </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input class="form-check-input m-0 align-middle" type="checkbox" aria-label="Select invoice"></td>
+                                    <td><span class="text-muted">001405</span></td>
+                                    <td><a href="invoice.html" class="text-reset" tabindex="-1">Marketing Templates</a></td>
+                                    <td>
+                                        <span class="flag flag-country-pl"></span>
+                                        Printic
+                                    </td>
+                                    <td>
+                                        87956621
+                                    </td>
+                                    <td>
+                                        29 Jan 2018
+                                    </td>
+                                    <td>
+                                        <span class="badge bg-danger me-1"></span> Paid Today
+                                    </td>
+                                    <td>$648</td>
+                                    <td class="text-end">
+                            <span class="dropdown">
+                              <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown">Actions</button>
+                              <div class="dropdown-menu dropdown-menu-end">
+                                <a class="dropdown-item" href="#">
+                                  Action
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                  Another action
+                                </a>
+                              </div>
+                            </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input class="form-check-input m-0 align-middle" type="checkbox" aria-label="Select invoice"></td>
+                                    <td><span class="text-muted">001406</span></td>
+                                    <td><a href="invoice.html" class="text-reset" tabindex="-1">Sales Presentation</a></td>
+                                    <td>
+                                        <span class="flag flag-country-br"></span>
+                                        Tabdaq
+                                    </td>
+                                    <td>
+                                        87956621
+                                    </td>
+                                    <td>
+                                        4 Feb 2018
+                                    </td>
+                                    <td>
+                                        <span class="badge bg-secondary me-1"></span> Due in 3 Weeks
+                                    </td>
+                                    <td>$300</td>
+                                    <td class="text-end">
+                            <span class="dropdown">
+                              <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown">Actions</button>
+                              <div class="dropdown-menu dropdown-menu-end">
+                                <a class="dropdown-item" href="#">
+                                  Action
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                  Another action
+                                </a>
+                              </div>
+                            </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input class="form-check-input m-0 align-middle" type="checkbox" aria-label="Select invoice"></td>
+                                    <td><span class="text-muted">001407</span></td>
+                                    <td><a href="invoice.html" class="text-reset" tabindex="-1">Logo & Print</a></td>
+                                    <td>
+                                        <span class="flag flag-country-us"></span>
+                                        Apple
+                                    </td>
+                                    <td>
+                                        87956621
+                                    </td>
+                                    <td>
+                                        22 Mar 2018
+                                    </td>
+                                    <td>
+                                        <span class="badge bg-success me-1"></span> Paid Today
+                                    </td>
+                                    <td>$2500</td>
+                                    <td class="text-end">
+                            <span class="dropdown">
+                              <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown">Actions</button>
+                              <div class="dropdown-menu dropdown-menu-end">
+                                <a class="dropdown-item" href="#">
+                                  Action
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                  Another action
+                                </a>
+                              </div>
+                            </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input class="form-check-input m-0 align-middle" type="checkbox" aria-label="Select invoice"></td>
+                                    <td><span class="text-muted">001408</span></td>
+                                    <td><a href="invoice.html" class="text-reset" tabindex="-1">Icons</a></td>
+                                    <td>
+                                        <span class="flag flag-country-pl"></span>
+                                        Tookapic
+                                    </td>
+                                    <td>
+                                        87956621
+                                    </td>
+                                    <td>
+                                        13 May 2018
+                                    </td>
+                                    <td>
+                                        <span class="badge bg-success me-1"></span> Paid Today
+                                    </td>
+                                    <td>$940</td>
+                                    <td class="text-end">
+                            <span class="dropdown">
+                              <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown">Actions</button>
+                              <div class="dropdown-menu dropdown-menu-end">
+                                <a class="dropdown-item" href="#">
+                                  Action
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                  Another action
+                                </a>
+                              </div>
+                            </span>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="card-footer d-flex align-items-center">
+                            <p class="m-0 text-muted">Showing <span>1</span> to <span>8</span> of <span>16</span> entries</p>
+                            <ul class="pagination m-0 ms-auto">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
+                                        <!-- Download SVG icon from http://tabler-icons.io/i/chevron-left -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="15 6 9 12 15 18" /></svg>
+                                        prev
+                                    </a>
                                 </li>
-                                <li>
-                                    <h5><i class="fa fa-circle" style="color: #888;"></i>Shoes</h5>
-                                </li>
-                                <li>
-                                    <h5><i class="fa fa-circle" style="color: #ff7f5a;"></i>Jewelery</h5>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">
+                                        next <!-- Download SVG icon from http://tabler-icons.io/i/chevron-right -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="9 6 15 12 9 18" /></svg>
+                                    </a>
                                 </li>
                             </ul>
-                            <div id="extra-area-chart"></div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                        <div class="analytics-rounded mg-b-10 res-mg-t-30">
-                            <div class="analytics-rounded-content">
-                                <h5>Percentage distribution</h5>
-                                <h2><span class="counter">60</span>/20</h2>
-                                <div class="text-center">
-                                    <div id="sparkline51"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="analytics-rounded">
-                            <div class="analytics-rounded-content">
-                                <h5>Percentage division</h5>
-                                <h2><span class="counter">150</span>/<span class="counter">54</span></h2>
-                                <div class="text-center">
-                                    <div id="sparkline52"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="author-area-pro">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                        <div class="personal-info-wrap">
-                            <div class="widget-head-info-box">
-                                <div class="persoanl-widget-hd">
-                                    <h2>Jon Royita</h2>
-                                    <p>Founder of Uttara It Park</p>
-                                </div>
-                                <img src="img/notification/5.jpg" class="img-circle circle-border m-b-md" alt="profile">
-                                <div class="social-widget-result">
-                                    <span>100 Tweets</span> |
-                                    <span>350 Following</span> |
-                                    <span>610 Followers</span>
-                                </div>
-                            </div>
-                            <div class="widget-text-box">
-                                <h4>Jhon Royita</h4>
-                                <p>To all the athaists attacking me right now, I can't make you believe in God, you have to have faith.</p>
-                                <div class="text-right like-love-list">
-                                    <a class="btn btn-xs btn-white"><i class="fa fa-thumbs-up"></i> Like </a>
-                                    <a class="btn btn-xs btn-primary"><i class="fa fa-heart"></i> Love</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                        <div class="author-widgets-single res-mg-t-30">
-                            <div class="author-wiget-inner">
-                                <div class="perso-img">
-                                    <img src="img/notification/6.jpg" class="img-circle circle-border m-b-md" alt="profile">
-                                </div>
-                                <div class="persoanl-widget-hd persoanl1-widget-hd">
-                                    <h2>Fire Foxy</h2>
-                                    <p>Founder of Uttara It House</p>
-                                </div>
-                                <div class="social-widget-result social-widget1-result">
-                                    <span>100 Tweets</span> |
-                                    <span>350 Following</span> |
-                                    <span>610 Followers</span>
-                                </div>
-                            </div>
-                            <div class="widget-text-box">
-                                <h4>Fire Foxy</h4>
-                                <p>To all the athaists attacking me right now, I can't make you believe in God, you have to have faith.</p>
-                                <div class="text-right like-love-list">
-                                    <a class="btn btn-xs btn-white"><i class="fa fa-thumbs-up"></i> Like </a>
-                                    <a class="btn btn-xs btn-primary"><i class="fa fa-heart"></i> Love</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                        <div class="personal-info-wrap personal-info-ano res-mg-t-30">
-                            <div class="widget-head-info-box">
-                                <div class="persoanl-widget-hd">
-                                    <h2>Jon Royita</h2>
-                                    <p>Founder of Uttara It Park</p>
-                                </div>
-                                <img src="img/contact/2.jpg" class="img-circle circle-border m-b-md" alt="profile">
-                                <div class="social-widget-result">
-                                    <span>100 Tweets</span> |
-                                    <span>350 Following</span> |
-                                    <span>610 Followers</span>
-                                </div>
-                            </div>
-                            <div class="widget-text-box">
-                                <h4>Jhon Royita</h4>
-                                <p>To all the athaists attacking me right now, I can't make you believe in God, you have to have faith.</p>
-                                <div class="text-right like-love-list">
-                                    <a class="btn btn-xs btn-white"><i class="fa fa-thumbs-up"></i> Like </a>
-                                    <a class="btn btn-xs btn-primary"><i class="fa fa-heart"></i> Love</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="calender-area mg-tb-30">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="calender-inner">
-                            <div id='calendar'></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer-copyright-area">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="footer-copy-right">
-                            <p>Copyright &copy; 2018 <a href="https://colorlib.com/wp/templates/">Colorlib</a> All rights reserved.</p>
                         </div>
                     </div>
                 </div>
