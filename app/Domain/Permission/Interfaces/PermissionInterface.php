@@ -17,11 +17,17 @@ interface PermissionInterface
      */
     public function  getAllPermissions($data);
 
+
+    /**
+     * get all Permission which has parent
+     */
+    public function getAllParentPermissions();
+
     /**
      * @param array $data
      * @return array
      */
-    public function storePermissions(array $data): array;
+    public function storePermissions($data);
 
     /**
      * @param array $data

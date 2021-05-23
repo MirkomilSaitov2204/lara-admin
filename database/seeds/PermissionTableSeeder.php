@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Domain\Permission\Entities\Permission;
+use App\Domain\Role\Entities\Role;
 
 class PermissionTableSeeder extends Seeder
 {
@@ -12,68 +14,67 @@ class PermissionTableSeeder extends Seeder
     public function run()
 
     {
-        $permissions_user = array(
-            array(
-                'name' => 'users',
-                'guard_name' => 'web',
-                'description' => json_encode([
-                    "uz" => "Userlar",
-                    "ru" => "Юзеры",
-                    "en" => "Users"
-                ])
+        $permissions_user = Permission::create([
+            'name' => 'users',
+            'guard_name' => 'web',
+            'description' => [
+                "uz" => "Userlar",
+                "ru" => "Юзеры",
+                "en" => "Users"
+            ]
+        ]);
 
-            )
-        );
-        DB::table('permissions')->insert($permissions_user);
+        $permissions_user_create = Permission::create([
+            'parent_id' => 1,
+            'name' => 'user_create',
+            'guard_name' => 'web',
+            'description' => [
+                "uz" => "Userlar Yaratish",
+                "ru" => "Ползавител Cоздат",
+                "en" => "Users Create"
+            ]
+        ]);
 
-        $permissions = array(
+        $permissions_user_update = Permission::create([
+            'parent_id' => 1,
+            'name' => 'user_update',
+            'guard_name' => 'web',
+            'description' => [
+                "uz" => "Userlar Yaratish",
+                "ru" => "Ползавител Cоздат",
+                "en" => "Users Create"
+            ]
+        ]);
 
-            array(
-                'name' => 'create_users',
-                'guard_name' => 'web',
-                'description' => json_encode([
-                    "uz" => "User Yaratish",
-                    "ru" => "Создать  Юзер",
-                    "en" => "Create User"
-                ]),
-                'parent_id' =>1
+        $permissions_user_delete = Permission::create([
+            'parent_id' => 1,
+            'name' => 'user_delete',
+            'guard_name' => 'web',
+            'description' => [
+                "uz" => "Userlar Yaratish",
+                "ru" => "Ползавител Cоздат",
+                "en" => "Users Create"
+            ]
+        ]);
 
-            ),
-            array(
-                'parent_id' => 1,
-                'name' => 'edit_user',
-                'guard_name' => 'web',
-                'description' => json_encode([
-                    "uz" => "User Taxrirlash",
-                    "ru" => "Редакторват  Юзер",
-                    "en" => "Edit User"
-                ])
+        $permissions_user_show = Permission::create([
+            'parent_id' => 1,
+            'name' => 'user_show',
+            'guard_name' => 'web',
+            'description' => [
+                "uz" => "Userlar Yaratish",
+                "ru" => "Ползавител Cоздат",
+                "en" => "Users Create"
+            ]
+        ]);
 
-            ),
-            array(
-                'parent_id' => 1,
-                'name' => 'delete_user',
-                'guard_name' => 'web',
-                'description' => json_encode([
-                    "uz" => "User ochirish",
-                    "ru" => "Удалить  Юзер",
-                    "en" => "Ochirish User"
-                ])
+        $roleAdmin = Role::findByName('admin');
+        $roleAdmin->givePermissionTo($permissions_user);
+        $roleAdmin->givePermissionTo($permissions_user_create);
+        $roleAdmin->givePermissionTo($permissions_user_update);
+        $roleAdmin->givePermissionTo($permissions_user_delete);
+        $roleAdmin->givePermissionTo($permissions_user_show);
 
-            ),
-            array(
-                'parent_id' => 1,
-                'name' => 'show_user',
-                'guard_name' => 'web',
-                'description' => json_encode([
-                    "uz" => "User korish",
-                    "ru" => "Просмотер  Юзер",
-                    "en" => "show User"
-                ])
 
-            ),
-
-        );
-        DB::table('permissions')->insert($permissions);
     }
 }

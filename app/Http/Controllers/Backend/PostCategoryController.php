@@ -2,17 +2,20 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Domain\Permission\Repositories\PermissionRepository;
+use App\Domain\PostCategory\Entities\PostCategory;
+use App\Domain\PostCategory\Exports\PostCategoryExport;
+use App\Domain\PostCategory\Repositories\PostCategoryRepository;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
-class PermissionController extends Controller
+class PostCategoryController extends Controller
 {
-    public $permissionRepository;
+    protected $postCategoryRepository;
 
-    public function __construct(PermissionRepository $permissionRepository)
+    public function __construct(PostCategoryRepository $postCategoryRepository)
     {
-        $this->permissionRepository = $permissionRepository;
+        $this->postCategoryRepository = $postCategoryRepository;
     }
 
     /**
@@ -20,11 +23,17 @@ class PermissionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $permissions = $this->permissionRepository->getAllPermissions(request()->all());
-        return view('backend.app.permissions.index', compact('permissions'));
-
+        $postCategories = $this->postCategoryRepository->getAllPostCategories($request->all());
+        if($request->has('export'))
+        {
+            $categories = PostCategory::query();
+            return Excel::download(new PostCategoryExport($categories), 'report.xlsx');
+        }
+        return view('backend.app.blog.categories.index', [
+            'postCategories' => $postCategories
+        ]);
     }
 
     /**
@@ -34,9 +43,8 @@ class PermissionController extends Controller
      */
     public function create()
     {
-        $permissions = $this->permissionRepository->getAllParentPermissions();
+        return view('backend.app.blog.categories.create');
 
-        return view('backend.app.permissions.create', compact('permissions'));
     }
 
     /**
@@ -47,8 +55,7 @@ class PermissionController extends Controller
      */
     public function store(Request $request)
     {
-        $this->permissionRepository->storePermissions($request->all());
-        return redirect()->route('permissions.index');
+        //
     }
 
     /**

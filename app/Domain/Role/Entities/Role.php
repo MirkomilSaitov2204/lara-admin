@@ -3,6 +3,7 @@
 namespace App\Domain\Role\Entities;
 
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Spatie\Permission\Traits\HasPermissions;
 use Spatie\Translatable\HasTranslations;
 
 

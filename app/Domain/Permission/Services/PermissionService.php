@@ -15,7 +15,7 @@ class PermissionService
         return $this->permissions = $permissions;
     }
 
-    protected function getPermissions()
+    public function permissions(): Permission
     {
         return $this->permissions;
     }

@@ -12,6 +12,15 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(User::class, '50')->create();
+        $role = \App\Domain\Role\Entities\Role::find(1);
+        User::create([
+            'name' => 'Admin',
+            'email' => 'admin@admin.com',
+            'password' => bcrypt('admin123'),
+            'first_name'=>'Mirkomil',
+            'last_name' => 'Saitov',
+            'dob' => '1997-22-04',
+        ])->syncRoles($role);
+        factory(User::class, 50)->create();
     }
 }

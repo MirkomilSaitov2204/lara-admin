@@ -25,6 +25,8 @@ class Permission extends \Spatie\Permission\Models\Permission
 {
     use SoftDeletes, HasTranslations;
 
+
+    protected $guard_name = 'web';
     /**
      * @var array $guarded
      */

@@ -2,19 +2,11 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Domain\Permission\Repositories\PermissionRepository;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class PermissionController extends Controller
+class PostController extends Controller
 {
-    public $permissionRepository;
-
-    public function __construct(PermissionRepository $permissionRepository)
-    {
-        $this->permissionRepository = $permissionRepository;
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -22,9 +14,7 @@ class PermissionController extends Controller
      */
     public function index()
     {
-        $permissions = $this->permissionRepository->getAllPermissions(request()->all());
-        return view('backend.app.permissions.index', compact('permissions'));
-
+        //
     }
 
     /**
@@ -34,9 +24,7 @@ class PermissionController extends Controller
      */
     public function create()
     {
-        $permissions = $this->permissionRepository->getAllParentPermissions();
-
-        return view('backend.app.permissions.create', compact('permissions'));
+        //
     }
 
     /**
@@ -47,8 +35,7 @@ class PermissionController extends Controller
      */
     public function store(Request $request)
     {
-        $this->permissionRepository->storePermissions($request->all());
-        return redirect()->route('permissions.index');
+        //
     }
 
     /**

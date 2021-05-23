@@ -34,6 +34,11 @@ Route::group(
         Route::resource('dashboard','DashboardController');
         Route::resource('users','UserController');
         Route::resource('roles','RoleController');
+        Route::resource('permissions','PermissionController');
+
+        Route::group(['prefix'=> 'blog'], function(){
+            Route::resource('categories','PostCategoryController');
+        });
     });
 
 });
