@@ -30,6 +30,12 @@ Route::group(
         'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
     ], function(){
 
+
+    Auth::routes();
+
+    Route::get('/home', 'HomeController@index')->name('home');
+
+
     Route::group(['prefix'=>'backend',  'namespace' => 'Backend'], function(){
         Route::resource('dashboard','DashboardController');
         Route::resource('users','UserController');
@@ -45,8 +51,3 @@ Route::group(
 Route::get('/', function () {
     return view('welcome');
 });
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-

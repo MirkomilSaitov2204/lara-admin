@@ -22,15 +22,16 @@ class PermissionService
 
     public function filter(array $data, $permissions)
     {
-        $permissions = $data['id']
-                    ? $permissions->where('id', $data['id'])
-                    : $permissions;
 
-        $permissions = $data['name']
+        $permissions = isset($data['parent_id'])
+            ? $permissions->where('parent_id', $data['parent_id'])
+            : $permissions;
+
+        $permissions = isset($data['name'])
             ? $permissions->where('name', 'LIKE', '%'.$data["name"].'%')
             : $permissions;
 
-        $permissions = $data['id']
+        $permissions = isset($data['description'])
             ? $permissions->where('description', 'LIKE', '%'.$data["description"].'%')
             : $permissions;
 

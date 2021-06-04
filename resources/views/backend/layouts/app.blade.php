@@ -14,6 +14,8 @@
     <link href="{{ asset('backend/dist/css/tabler-payments.min.css') }}" rel="stylesheet"/>
     <link href="{{ asset('backend/dist/css/tabler-vendors.min.css') }}" rel="stylesheet"/>
     <link href="{{ asset('backend/dist/css/demo.min.css') }}" rel="stylesheet"/>
+
+{{--    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>--}}
 </head>
 <body class="antialiased">
 <div class="wrapper">
@@ -28,11 +30,11 @@
 
 
 <!-- Libs JS -->
-<script src="{{ asset('backend/dist/libs/apexcharts/dist/apexcharts.min.js') }}"></script>
-<!-- Tabler Core -->
-<script src="{{ asset('backend/dist/js/tabler.min.js') }}"></script>
+{{--<script src="{{ asset('backend/dist/libs/apexcharts/dist/apexcharts.min.js') }}"></script>--}}
+{{--<!-- Tabler Core -->--}}
+{{--<script src="{{ asset('backend/dist/js/tabler.min.js') }}"></script>--}}
+
 
 @include('backend.layouts.partials.additional_scripts')
-
 </body>
 </html>

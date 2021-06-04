@@ -13,6 +13,11 @@ class PermissionController extends Controller
     public function __construct(PermissionRepository $permissionRepository)
     {
         $this->permissionRepository = $permissionRepository;
+        $this->middleware('permission:permissions', ['only' => ['index']]);
+        $this->middleware('permission:permissions_create', ['only' => ['create, store']]);
+        $this->middleware('permission:permissions_show', ['only' => ['show']]);
+        $this->middleware('permission:permissions_update', ['only' => ['update, edit']]);
+        $this->middleware('permission:permissions_delete', ['only' => ['delete']]);
     }
 
     /**
@@ -23,7 +28,8 @@ class PermissionController extends Controller
     public function index()
     {
         $permissions = $this->permissionRepository->getAllPermissions(request()->all());
-        return view('backend.app.permissions.index', compact('permissions'));
+        $permissionParents = $this->permissionRepository->getAllParentPermissions();
+        return view('backend.app.permissions.index', compact('permissions', 'permissionParents'));
 
     }
 

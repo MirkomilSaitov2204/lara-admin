@@ -9,6 +9,6 @@ interface GlobalFunctionInterface
     /**
      * @var PER_PAGE
      */
-    const PER_PAGE = 20;
+    const PER_PAGE = 10;
 
 }

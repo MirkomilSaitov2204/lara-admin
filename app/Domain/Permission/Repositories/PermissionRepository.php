@@ -41,7 +41,7 @@ class PermissionRepository implements PermissionInterface, GlobalFunctionInterfa
             if(!empty($data)){
                 $permissions = $this->permissionServices->filter($data, $permissions);
             }
-            return $permissions->orderBy('id', 'desc')->paginate(self::PER_PAGE);
+            return $permissions->orderBy('id', 'asc')->paginate(self::PER_PAGE);
 
         }catch (\Throwable $exception){
             logger($exception);

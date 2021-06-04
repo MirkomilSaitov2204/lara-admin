@@ -2,13 +2,14 @@
 
 namespace App\Domain\User\Employee\Entities;
 
+use App\Domain\Core\Authenticatable;
 use App\Domain\Core\Entity;
 use App\Domain\Role\Entities\Role;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles;
 
-class User extends Entity
+class User extends Authenticatable
 {
 
 

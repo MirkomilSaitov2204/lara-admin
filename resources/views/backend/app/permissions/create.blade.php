@@ -14,9 +14,6 @@
             <div class="card">
                 <div class="card-header d-flex justify-content-between">
                     <h3 class="card-title">Create Permission</h3>
-                    {{--<form action="?">--}}
-                        {{--<button class="btn btn-success btn-sm d-block" name="export" type="submit">Export Permissions</button>--}}
-                    {{--</form>--}}
                 </div>
                 <div class="card-body border-bottom py-3">
                     <form action="{{ route('permissions.store') }}" method="post">
@@ -100,10 +97,7 @@
                     </form>
 
                 </div>
-                <div class="table-responsive">
-                </div>
             </div>
         </div>
     </div>
-
 @endsection

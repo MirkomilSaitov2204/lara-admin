@@ -12,7 +12,7 @@ class PostTableSeeder extends Seeder
     public function run()
     {
         $tags = \App\Domain\Tag\Entities\Tag::inRandomOrder()->take(5)->get();
-        factory(\App\Domain\Post\Entities\Post::class, 10000)->create()
+        factory(\App\Domain\Post\Entities\Post::class, 1000)->create()
             ->each(function($post) use ($tags){
                 $post->tags()->sync($tags);
             });;
