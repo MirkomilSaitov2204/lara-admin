@@ -1,49 +1,28 @@
-<style>
-    .radius {
-        border-radius: 10px;
-    }
-    .button_color{
-        background: #1D3557;
-    }
-</style>
-<form action="?" method="get">
-    <div class="row">
-        <div class="col-md-3">
-            <div class="form-group">
-                <input type="text" class="form-control radius" value="" name="name" placeholder="Permission Name"
-                       >
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="form-group">
-                <select name="parent_id" id="" class="form-select radius" aria-label="Default select example">
-                    <option value="">Permission Parent Name</option>
-                    @foreach($permissionParents as $parent)
-                        <option value="{{ $parent->id }}">{{ $parent->name }}</option>
-                    @endforeach
-                </select>
-            </div>
-        </div>
-        <div class="col-md-2">
-            <div class="form-group">
-                <input type="date" class="form-control radius" value="" name="name" placeholder="Permission Name">
-            </div>
-        </div>
-        <div class="col-md-2">
-            <div class="form-group">
-                <input type="date" class="form-control radius" value="" name="name" placeholder="Permission Name">
-            </div>
-        </div>
-        <div class="col-md-2">
-            <div class="form-group d-flex justify-content-between">
-                <button type="submit" class="btn btn-dark btn-pill button_color"><i
-                        class="fa fa-filter"></i> FILTER
-                </button>
-                <button type="" class="btn btn-dark btn-pill button_color"><i
-                        class="fa fa-undo"></i> RESET
-                </button>
-            </div>
+<div class="row">
+    <div class="col col-sm-9">
+        <input type="text" class="form-control" placeholder="Search">
+        <select name="" id="" class="form-control" style="color: #111">
+            <option value="">All</option>
+            @foreach($permissionParents as $parent)
+                <option value="{{ $parent->id }}">{{ $parent->name }}</option>
+            @endforeach
+        </select>
+        <input type="date" class="form-control" placeholder="Search">
+        <input type="date" class="form-control" placeholder="Search">
+    </div>
+    <div class="col-sm-3 text-right">
+        <div class="btn_group d-flex justify-content-end ">
+            <a href="#" class="btn btn-default" title="Create" data-bs-toggle="modal" data-bs-target="#modal-report">
+                <i class="fa fa-plus"></i>Create
+            </a>
+            <button class="btn btn-default" title="Filter"><i class="fa fa-filter"></i>Filter
+            </button>
+            <button class="btn btn-default" title="Reload"><i class="fa fa-sync-alt"></i>
+            </button>
+            <button class="btn btn-default" title="Excel"><i class="fas fa-file-excel"></i>
+            </button>
         </div>
     </div>
-</form>
+</div>
 
+@include('backend.app.permissions.create')

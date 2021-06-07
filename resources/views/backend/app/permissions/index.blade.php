@@ -1,35 +1,26 @@
 @extends('backend.layouts.app')
 @section('content')
-    <div class="container-fluid">
-        <div class="d-flex justify-content-between mt-2 mb-2">
-            <div><h3 style="color:#1D3557">Permissions Table </h3></div>
-            <a href="{{ route('permissions.create') }}" class="btn btn-outline-success">
-                <i class="fa fa-plus" style="margin-right: 10px"></i>
-                Create Permissions
-            </a>
-        </div>
-        <div class="card" style="border-radius: 40px">
-            <div class="card-header d-flex justify-content-between">
-                <h3 class="card-title">Permissions</h3>
-                <form action="?">
-                    <button class="btn btn-success btn-sm d-block" name="export" type="submit">Export Permissions
-                    </button>
-                </form>
-            </div>
-            <div class="card-body border-bottom py-3">
-                <div>
-                    @include('backend.app.permissions.components.filter', $permissionParents)
+    <link href="{{ asset('backend/dist/css/table.css') }}" rel="stylesheet"/>
+    <link rel="stylesheet" href="sweetalert2.min.css">
+    <div class="table-responsive">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="mb-2 text-center">
+                            <h4 class="title">Permission <span>Table</span></h4>
+                        </div>
+                        @include('backend.app.permissions.components.filter')
+
+                    </div>
+                    <div class="panel-body table-responsive">
+                        @include('backend.app.permissions.components.table', $permissions)
+                    </div>
+                    @include('backend.app.permissions.components.footer', $permissions)
                 </div>
-            </div>
-            <div class="table-responsive">
-                @include('backend.app.permissions.components.table', $permissions)
-            </div>
-            <div class="card-footer d-flex align-items-center">
-                <p class="m-0 text-muted">Общее количество <span>{{ number_format($permissions->total(), 0, '.', ' ') }}</span> entries</p>
-                <ul class="pagination m-0 ms-auto">
-                    {{ $permissions->links() }}
-                </ul>
             </div>
         </div>
     </div>
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 @endsection

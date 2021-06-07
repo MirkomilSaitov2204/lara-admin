@@ -21,6 +21,6 @@ class UserTableSeeder extends Seeder
             'last_name' => 'Saitov',
             'dob' => '1997-22-04',
         ])->syncRoles($role);
-        factory(User::class, 50)->create();
+        factory(User::class, 5)->create();
     }
 }

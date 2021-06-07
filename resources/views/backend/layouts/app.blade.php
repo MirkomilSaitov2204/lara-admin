@@ -35,6 +35,8 @@
 {{--<script src="{{ asset('backend/dist/js/tabler.min.js') }}"></script>--}}
 
 
+<script src="{{ asset('backend/dist/js/tabler.min.js') }}"></script>
 @include('backend.layouts.partials.additional_scripts')
+
 </body>
 </html>
