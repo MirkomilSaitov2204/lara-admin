@@ -1,7 +1,7 @@
 @extends('backend.layouts.app')
 @section('content')
     <link href="{{ asset('backend/dist/css/table.css') }}" rel="stylesheet"/>
-    <link rel="stylesheet" href="sweetalert2.min.css">
+{{--    <link rel="stylesheet" href="sweetalert2.min.css">--}}
     <div class="table-responsive">
         <div class="row">
             <div class="col-md-12">
@@ -22,5 +22,5 @@
         </div>
     </div>
 
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+{{--    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>--}}
 @endsection

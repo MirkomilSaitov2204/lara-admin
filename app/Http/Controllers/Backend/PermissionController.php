@@ -53,8 +53,8 @@ class PermissionController extends Controller
      */
     public function store(Request $request)
     {
-        $this->permissionRepository->storePermissions($request->all());
-        return redirect()->route('permissions.index');
+        $data =  $this->permissionRepository->storePermissions($request->all());
+        return response()->json($data);
     }
 
     /**

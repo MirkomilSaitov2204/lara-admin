@@ -1,4 +1,4 @@
-<table class="table">
+<table class="table" id="table_modal">
     <thead>
     <tr>
         <th>#</th>
@@ -16,7 +16,7 @@
                 <td style="color: {{!$permission->parent ? 'red' : ''}}">{{ $permission->name }}</td>
                 <td>{{ $permission->parent ? $permission->parent->name : '' }}</td>
                 <td>{{ $permission->description }}</td>
-                <td>{{ $permission->created_at }}</td>
+                <td>{{ $permission->created_at->format('Y-m-d') }}</td>
                 <td>
                     <ul class="action-list">
                         <li><a href="#" data-tip="edit"><i class="fa fa-edit"></i></a></li>
