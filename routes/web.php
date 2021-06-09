@@ -41,6 +41,8 @@ Route::group(
         Route::resource('users','UserController');
         Route::resource('roles','RoleController');
         Route::resource('permissions','PermissionController');
+        Route::get('export', 'PermissionController@getExport')->name('permission-export');
+
 
         Route::group(['prefix'=> 'blog'], function(){
             Route::resource('categories','PostCategoryController');

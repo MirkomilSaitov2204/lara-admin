@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Domain\Permission\Entities\Permission;
+use App\Domain\Permission\Exports\PermissionExcel;
 use App\Domain\Permission\Repositories\PermissionRepository;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class PermissionController extends Controller
 {
@@ -100,5 +103,15 @@ class PermissionController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function getExport(Request $request)
+    {
+        if ($request->has('export')){
+//            $permissions = $this->permissionRepository->getAllPermissions(request()->all());
+            $permissions = Permission::with('parent')->get();
+//            dd($permissions);
+            return Excel::download(new PermissionExcel($permissions), 'permissions.xlsx');
+        }
     }
 }

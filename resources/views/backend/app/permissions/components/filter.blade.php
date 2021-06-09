@@ -19,8 +19,12 @@
             </button>
             <button class="btn btn-default" title="Reload"><i class="fa fa-sync-alt"></i>
             </button>
-            <button class="btn btn-default" title="Excel"><i class="fas fa-file-excel"></i>
-            </button>
+            <form action="{{route('permission-export')}}">
+                <button class="btn btn-default"  name="export" type="submit" title="Excel">
+                    <i class="fas fa-file-excel"></i>
+                </button>
+            </form>
+
         </div>
     </div>
 </div>
