@@ -49,32 +49,65 @@ class PermissionRepository implements PermissionInterface, GlobalFunctionInterfa
 
     }
 
+    /**
+     * @return mixed
+     */ 
     public function getAllParentPermissions()
     {
         $permissions = $this->permissionServices->permissions()->where('parent_id', 0)->get();
         return $permissions;
     }
 
-
+    /**
+     * @method Store Data
+     * @param  $data
+     * @return mixed
+     */
     public function storePermissions($data)
     {
 
         try{
-            $permissions = Permission::create($data);
+            $permissions = $this->permissionServices->permissions->create($data);
             return $permissions;
         }catch (\Throwable $exception){
             logger($exception);
         }
     }
 
+    /**
+     * @method Update Data
+     * @param  $id
+     * @param  $data
+     * @return mixed
+     */
     public function updatePermissions(array $data, $id): array
     {
-        // TODO: Implement storePermissions() method.
+        try {
+            $permissions = $this->permissionServices->permissions->where('id', $id)->firstOrFail();
+            if(!$permissions){
+                return false;
+            }
+            return $permissions->update($data);
+        } catch (Exception $e) {
+            return $e;
+        }
     }
 
+    /**
+     * @param $id
+     * @return mixed
+     */
     public function deletePermissions($id)
     {
-        // TODO: Implement storePermissions() method.
+        try {
+            $permissions = $this->permissionServices->permissions->where('id', $id)->firstOrFail();
+            if(!$permissions){
+                return false;
+            }
+            return $permissions->delete();
+        } catch (Exception $e) {
+            return $e;
+        }
     }
 
 }

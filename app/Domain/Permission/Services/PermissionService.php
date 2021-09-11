@@ -6,20 +6,40 @@ namespace App\Domain\Permission\Services;
 
 use App\Domain\Permission\Entities\Permission;
 
+/**
+ * Class PermissionService
+ * @package App\Domain\Permission\Services
+ * 
+ * @method __construct()
+ * @method permissions()
+ * @method filter(array, array)
+ * 
+ * @author Mirkomil Saitov <mirkomilsaitov@gmail.com>
+ */
 class PermissionService
 {
     protected $permissions;
 
+    /**
+     * Constructor for initializing $permissions 
+     * Permission $permission
+     */
     public function __construct(Permission $permissions)
     {
         return $this->permissions = $permissions;
     }
 
+    /**
+     * Get All permissions
+     */
     public function permissions(): Permission
     {
         return $this->permissions;
     }
 
+    /**
+     * Filter permissions 
+     */
     public function filter(array $data, $permissions)
     {
 

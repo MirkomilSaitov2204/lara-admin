@@ -108,9 +108,7 @@ class PermissionController extends Controller
     public function getExport(Request $request)
     {
         if ($request->has('export')){
-//            $permissions = $this->permissionRepository->getAllPermissions(request()->all());
             $permissions = Permission::with('parent')->get();
-//            dd($permissions);
             return Excel::download(new PermissionExcel($permissions), 'permissions.xlsx');
         }
     }
