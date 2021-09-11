@@ -1,37 +1,20 @@
 <?php
 
-namespace App\Http\Controllers\Backend;
+namespace App\Http\Controllers\Backend\Blog;
 
-use App\Domain\Role\Repositories\RoleRepository;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class RoleController extends Controller
+class PostController extends Controller
 {
-    /**
-     * @var RoleRepository
-     */
-    public $roleRepository;
-
-    /**
-     * RoleController constructor.
-     * @param RoleRepository $roleRepository
-     */
-    public function __construct(RoleRepository $roleRepository)
-    {
-        $this->roleRepository = $roleRepository;
-    }
-
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        $roles = $this->roleRepository->getAllRoles($request->all());
-
-        return view('backend.app.roles.index', compact('roles'));
+        //
     }
 
     /**

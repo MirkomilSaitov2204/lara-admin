@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Backend;
+namespace App\Http\Controllers\Backend\Action;
 
 use App\Domain\Permission\Entities\Permission;
 use App\Domain\Permission\Exports\PermissionExcel;

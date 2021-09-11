@@ -1,21 +1,25 @@
 <?php
 
-namespace App\Http\Controllers\Backend;
+namespace App\Http\Controllers\Backend\Action;
 
-use App\Domain\PostCategory\Entities\PostCategory;
-use App\Domain\PostCategory\Exports\PostCategoryExport;
-use App\Domain\PostCategory\Repositories\PostCategoryRepository;
+use App\Domain\Role\Repositories\RoleRepository;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Maatwebsite\Excel\Facades\Excel;
 
-class PostCategoryController extends Controller
+class RoleController extends Controller
 {
-    protected $postCategoryRepository;
+    /**
+     * @var RoleRepository
+     */
+    public $roleRepository;
 
-    public function __construct(PostCategoryRepository $postCategoryRepository)
+    /**
+     * RoleController constructor.
+     * @param RoleRepository $roleRepository
+     */
+    public function __construct(RoleRepository $roleRepository)
     {
-        $this->postCategoryRepository = $postCategoryRepository;
+        $this->roleRepository = $roleRepository;
     }
 
     /**
@@ -25,15 +29,9 @@ class PostCategoryController extends Controller
      */
     public function index(Request $request)
     {
-        $postCategories = $this->postCategoryRepository->getAllPostCategories($request->all());
-        if($request->has('export'))
-        {
-            $categories = PostCategory::query();
-            return Excel::download(new PostCategoryExport($categories), 'report.xlsx');
-        }
-        return view('backend.app.blog.categories.index', [
-            'postCategories' => $postCategories
-        ]);
+        $roles = $this->roleRepository->getAllRoles($request->all());
+
+        return view('backend.app.roles.index', compact('roles'));
     }
 
     /**
@@ -43,8 +41,7 @@ class PostCategoryController extends Controller
      */
     public function create()
     {
-        return view('backend.app.blog.categories.create');
-
+        //
     }
 
     /**

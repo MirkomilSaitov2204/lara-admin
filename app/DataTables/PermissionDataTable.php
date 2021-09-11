@@ -31,11 +31,7 @@ class PermissionDataTable extends DataTable
                 return $row->created_at ? date_format($row->created_at, 'Y-m-d') : "";
             })
             ->addIndexColumn()
-            ->rawColumns(['name']);;
-//            ->editColumn("parent_id", function ($row){
-//                return $row->parent->name;
-//            })
-//            ->addColumn('action', 'permission.action');
+            ->rawColumns(['name']);
     }
 
     /**

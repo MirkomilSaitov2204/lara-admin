@@ -1,12 +1,29 @@
 <?php
 
-namespace App\Http\Controllers\Backend;
+namespace App\Http\Controllers\Backend\User;
 
-use App\Http\Controllers\Controller;
+
 use Illuminate\Http\Request;
+use App\Http\Controllers\Backend\BaseController;
+use App\Domain\User\Employee\Repositories\UserRepository;
+use App\Http\Resources\Backend\User\EmployeeResourceCollection;
 
-class TagController extends Controller
+class EmployeeController extends BaseController
 {
+
+    protected $emoloyeeRepositories
+
+    public function __construct(UserRepository $emoloyeeRepositories)
+    {
+        $this->emoloyeeRepositories = $emoloyeeRepositories;
+
+        $this->middleware('permission:employees', ['only' => ['index']]);
+        $this->middleware('permission:employees_create', ['only' => ['create, store']]);
+        $this->middleware('permission:employees_show', ['only' => ['show']]);
+        $this->middleware('permission:employees_update', ['only' => ['update, edit']]);
+        $this->middleware('permission:employees_delete', ['only' => ['delete']]);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +31,10 @@ class TagController extends Controller
      */
     public function index()
     {
-        //
+        $employees = $this->employeeRepositories->getAllEmployees(request()->all());
+        return this->sendResponse([
+            'employees' => new EmployeeResourceCollection($employees);
+        ])
     }
 
     /**
