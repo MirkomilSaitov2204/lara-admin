@@ -33,7 +33,7 @@ class EmployeeController extends BaseController
     {
         $employees = $this->employeeRepositories->getAllEmployees(request()->all());
         return this->sendResponse([
-            'employees' => new EmployeeResourceCollection($employees);
+            'employees' => new EmployeeResourceCollection($employees)
         ])
     }
 

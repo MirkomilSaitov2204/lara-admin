@@ -11,4 +11,7 @@ interface GlobalFunctionInterface
      */
     const PER_PAGE = 10;
 
+    const CODE = 'code';
+    const DATA = 'data';
+
 }

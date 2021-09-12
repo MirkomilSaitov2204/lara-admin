@@ -32,7 +32,12 @@ class PermissionController extends Controller
     {
         $permissions = $this->permissionRepository->getAllPermissions(request()->all());
         $permissionParents = $this->permissionRepository->getAllParentPermissions();
-        return view('backend.app.permissions.index', compact('permissions', 'permissionParents'));
+        
+        return $this->sendResponse([
+            'permissions' => new PermissionResourceCollection($permissions),
+            'permissionParents' => $permissionParents
+        ]) 
+
 
     }
 
