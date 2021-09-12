@@ -7,6 +7,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Backend\BaseController;
+use App\Domain\Core\GlobalFunctionInterface;
 
 class LoginController extends BaseController implements GlobalFunctionInterface
 {
@@ -49,7 +50,7 @@ class LoginController extends BaseController implements GlobalFunctionInterface
      */
     public function me()
     {
-        return this->sendResponse([
+        return $this->sendResponse([
             self::CODE => 200,
             self::DATA => $this->auth->user()
         ]);
@@ -64,7 +65,7 @@ class LoginController extends BaseController implements GlobalFunctionInterface
     {
         $this->auth->logout();
 
-        return this->sendResponse([
+        return $this->sendResponse([
             self::CODE => 200,
             self::DATA => 'Successfully logged out'
         ]);
@@ -90,7 +91,7 @@ class LoginController extends BaseController implements GlobalFunctionInterface
     protected function respondWithToken($token)
     {
 
-        return this->sendResponse([
+        return $this->sendResponse([
             self::CODE => 200,
             self::DATA => [
                 'access_token' => $token,
